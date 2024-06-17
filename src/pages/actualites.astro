@@ -5,17 +5,18 @@ import Container from "../components/Container.astro";
 import AskDevis from "../components/AskDevis.astro";
 import BeforeFoot from "../components/BeforeFoot.astro";
 import Entete from "../components/entete.astro";
+import HeadFile from "../components/HeadFile.astro";
 
 import ActuItem from "../components/ActuItem.astro";
-import { getCollection } from "astro:content";
+// import { getCollection } from "astro:content";
 
-const posts = (await getCollection("blog"));
+// const posts = await getCollection("blog");
 ---
 
 <!doctype html>
 <html lang='en'>
   <head>
-    
+    <HeadFile />
     <style>
       .banniere {
         @apply mb-28 mt-6;
@@ -28,7 +29,12 @@ const posts = (await getCollection("blog"));
       <Entete> Actualités </Entete>
 
       <div>
-        {
+        <ActuItem
+          titre='teste de titre'
+          date='17 Juin 2024'
+          descript='Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Vitae ultricies leo integer malesuada nunc vel risus commodo viverra. Adipiscing enim eu turpis egestas pretium. Euismod elementum nisi quis eleifend quam adipiscing.'
+        />
+        <!-- {
           posts.map(async (post) => (
             <ActuItem
               titre={post.data.title}
@@ -37,7 +43,7 @@ const posts = (await getCollection("blog"));
               post={await post.render()}
             />
           ))
-        }
+        } -->
       </div>
       <AskDevis />
     </Container>
