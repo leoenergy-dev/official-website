@@ -11,9 +11,7 @@ import Entete from "../components/entete.astro";
 import ActuItem from "../components/ActuItem.astro";
 import { getCollection } from "astro:content";
 
-const posts = (await getCollection("blog")).sort(
-  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
-);
+const posts = (await getCollection("blog"));
 ---
 
 <!doctype html>
