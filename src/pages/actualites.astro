@@ -1,8 +1,6 @@
 ---
-import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 import Container from "../components/Container.astro";
 import AskDevis from "../components/AskDevis.astro";
 import BeforeFoot from "../components/BeforeFoot.astro";
@@ -17,7 +15,7 @@ const posts = (await getCollection("blog"));
 <!doctype html>
 <html lang='en'>
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    
     <style>
       .banniere {
         @apply mb-28 mt-6;
