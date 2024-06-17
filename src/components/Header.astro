@@ -1,0 +1,29 @@
+---
+import Container from "./Container.astro";
+---
+
+<header>
+  <nav class='h-[92px] border-b flex items-center text-[20px]'>
+    <Container>
+      <div class='flex items-center gap-6'>
+        <a href='/' class='flex items-center'>
+          <div class='w-[60px]'>
+            <img src='/logo_leo.png' alt='logo leo Energy' width='100%' />
+          </div>
+          <div class='font-bold principal-blue text-[24px]'>
+            LEO<span class='principal-yellow'>ENERGY</span>
+          </div>
+        </a>
+        <div>
+          <ul class='flex gap-5 font-semibold text-gray-600'>
+            <a href='/entreprise'><li>Entreprise</li></a>
+            <a href='/competences'><li>Compétences</li></a>
+            <a href='/devis'><li>Devis</li></a>
+            <a href='/actualites'><li>Actualités</li></a>
+            <a href='/contact'><li>Contact</li></a>
+          </ul>
+        </div>
+      </div>
+    </Container>
+  </nav>
+</header>

@@ -1,0 +1,23 @@
+---
+interface Props {
+  titre?: string;
+}
+
+const { titre } = Astro.props as Props;
+---
+
+<section class='py-20'>
+  <div class='w-[90%] mx-auto'>
+    {
+      titre && (
+        <div>
+          {" "}
+          <div class='text-[40px] text-center font-bold uppercase'>{titre}</div>
+        </div>
+      )
+    }
+    <div class='text-center text-8xl uppercase font-extrabold'>
+      <slot />
+    </div>
+  </div>
+</section>

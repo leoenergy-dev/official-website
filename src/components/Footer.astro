@@ -1,0 +1,31 @@
+---
+import Container from "./Container.astro";
+const today = new Date();
+---
+
+<footer class='bg-blue'>
+  <Container>
+    <div class='flex text-base justify-between'>
+      <ul class='flex gap-2 text-base'>
+        <li><a href='/'>Accueil</a></li>
+        <li><a href='/entreprise'>Entreprise</a></li>
+        <li><a href='/competences'>Compétences</a></li>
+        <li><a href='/devis'>Devis</a></li>
+        <li><a href='/actualites'>Actualités</a></li>
+        <li><a href='/contact'>Contact</a></li>
+      </ul>
+      <span
+        ><strong>&copy; {today.getFullYear()} Leo Energy</strong>. All rights
+        reserved.</span
+      >
+    </div>
+  </Container>
+</footer>
+<style>
+  footer {
+    padding: 2em 0;
+    color: rgb(var(--gray));
+    text-align: center;
+    color: white;
+  }
+</style>

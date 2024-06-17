@@ -1,0 +1,32 @@
+---
+import Container from "./Container.astro";
+---
+
+<section class='before_foot'>
+  <Container>
+    <div class='py-[50px]'>
+      <div class='flex items-center'>
+        <div class='w-[160px] aspect-square'>
+          <img src='/logo_leo.png' alt='' width='100%' />
+        </div>
+        <div class='flex flex-col text-5xl font-bold'>
+          <span class='principal-blue'>LEO</span>
+          <span class='principal-yellow'>ENERGY</span>
+        </div>
+      </div>
+      <div class='bg-white p-[50px] max-w-[550px] border'>
+        <div class='font-bold'>37 Rue Druge 38200 Vienne</div>
+        <div class='font-bold'>Contact mail</div>
+        <div class='font-semibold'>infos@leo-energy.com</div>
+        <div class='font-semibold'>contact@leo-energy.com</div>
+      </div>
+    </div>
+  </Container>
+</section>
+
+<style>
+  .before_foot {
+    margin-top: 24px;
+    background-color: var(--blue-light);
+  }
+</style>

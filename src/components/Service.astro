@@ -1,0 +1,57 @@
+---
+interface Props {
+  separation?: boolean;
+  icon: string;
+  title: string;
+  yellow?: boolean;
+  description: string;
+  leo?: boolean;
+}
+const { separation, icon, title, yellow, description, leo } =
+  Astro.props as Props;
+---
+
+<div class=`service ${yellow ? 'bg-yellow' : 'bg-bleu-10'}`>
+  {separation && <div class='separation' />}
+  <div class='relative overflow-hidden p-[50px]'>
+    <div><img src={icon} alt='' /></div>
+    <div class='text-3xl font-bold mb-8'>{title}</div>
+    <div>{description}</div>
+    {
+      leo && (
+        <div class='absolute bottom-[-70%] right-[40px]'>
+          <img
+            src='/logo_leo.png'
+            alt=''
+            width='150%'
+            style='max-width: none; opacity: .2;'
+          />
+        </div>
+      )
+    }
+  </div>
+</div>
+
+<style>
+  .service {
+    flex: 1;
+    height: 488px;
+    display: flex;
+    position: relative;
+  }
+
+  .bg-bleu-10 {
+    background-color: #f6fbff;
+  }
+
+  .separation {
+    width: 6px;
+    height: 60%;
+    background-color: var(--principal-blue);
+    position: absolute;
+    left: -4px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 50px;
+  }
+</style>

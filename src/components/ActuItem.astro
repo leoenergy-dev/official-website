@@ -1,0 +1,54 @@
+---
+interface Props {
+  date?: string;
+  titre?: string;
+  descript: string;
+  post?: any;
+}
+
+const { date, titre, descript, post } = Astro.props as Props;
+
+const description =
+  descript.length > 150 ? `${descript?.substring(0, 150)}...` : descript;
+
+const Content = await post;
+console.log(Content);
+---
+
+<div class='flex p-9 items-start items'>
+  <div class='date principal-blue'>
+    <span>{date}</span>
+  </div>
+  <div class='flex-1'>
+    <div class='content-item'>
+      <div class='itemsTitre'>{titre}</div>
+      <div class='mb-4'>{description}</div>
+      <div id='body'>
+        {Content}
+      </div>
+      <button class='font-bold principal-blue uppercase'>lire plus</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .items {
+    background-color: var(--blue-light);
+    gap: 36px;
+  }
+
+  .items + .items {
+    margin-top: 24px;
+  }
+
+  .date {
+    @apply w-[250px] font-bold text-2xl;
+  }
+  .content-item {
+    @apply w-[80%];
+  }
+
+  .itemsTitre {
+    @apply text-3xl font-bold mb-4;
+  }
+</style>

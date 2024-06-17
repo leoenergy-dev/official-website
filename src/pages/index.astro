@@ -1,0 +1,115 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import Container from "../components/Container.astro";
+import Service from "../components/Service.astro";
+import AskDevis from "../components/AskDevis.astro";
+import Actu from "../components/Actu.astro";
+import BeforeFoot from "../components/BeforeFoot.astro";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style>
+      .banniere {
+        @apply mb-28 mt-6;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <Container>
+      <div class='banniere'>
+        <div class='relative'>
+          <img src='/banniere_1.jpg' alt='' />
+          <div
+            class='absolute top-0 left-0 w-full h-full bg-blue-20 lg:p-[47px] flex items-end justify-start'>
+            <div class='lg:w-[55%] text-5xl font-extrabold text-white mb-12'>
+              Optimiser vos dépenses énergitiques, booster votre avenir.
+            </div>
+          </div>
+          <div class='bg-yellow absolute bottom-[-64px] right-[47px] w-[428px]'>
+            <div class='relative p-[47px] overflow-hidden'>
+              <div class='absolute top-[0] right-[0]'>
+                <img src='/flash.png' alt='' />
+              </div>
+              <div class='font-semibold mb-10 relative z-[2]'>
+                Transition énergétique réussie : Expertise et conseils sur
+                mesure pour des économies concrètes. Contactez-nous et démarrons
+                votre projet dès maintenant!
+              </div>
+              <a
+                href='/contact'
+                class='flex w-full h-[56px] bg-[#0005] font-semibold justify-center items-center text-white rounded-full relative z-[2] uppercase text-base'>
+                Contactez-nous
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class='pt-1'>
+        <div class='relative bg-blue p-[50px] mt-24 flex gap-[50px]'>
+          <div class='w-[368px] relative'>
+            <img
+              src='/humain.jpg'
+              alt=''
+              width='100%'
+              class='h-[427px] object-cover absolute bottom-0'
+            />
+          </div>
+          <div class='flex-1'>
+            <div class='text-white'>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
+              molestie auctor suscipit. Nulla id odio tellus. Proin sagittis at
+              mi vel mattis. In euismod neque imperdiet mi hendrerit aliquam.
+              Integer quis sapien ac diam aliquam interdum at at sem. Nulla nisi
+              justo, bibendum quis lectus quis, consequat semper justo.
+              Phasellus rutrum mollis vulputate. Integer tempus ipsum et lectus
+              blandit dictum id in magna. Donec eget volutpat arcu, id ultricies
+              enim. Nam blandit luctus molestie. In at nunc aliquet, auctor ex
+              et, dignissim ex. Sed blandit a enim vitae lacinia.
+            </div>
+            <a
+              href='/entreprise'
+              class='inline-flex w-fit h-[56px] bg-white font-semibold justify-center items-center text-gray-800 rounded-full relative z-[2] uppercase text-base px-10 mt-5'>
+              en savoir plus
+            </a>
+          </div>
+        </div>
+      </div>
+      <section class='mt-[167px]'>
+        <div class='py-5'>
+          <div class='mx-auto titre text-center'>Services</div>
+        </div>
+        <div class='flex'>
+          <Service
+            icon='/audit.png'
+            title='Audit & Analyse'
+            yellow
+            description='Optimisez vos performances énergétiques et réglementaires avec nos audits et diagnostics immobiliers.'
+          />
+          <Service
+            icon='/expert.png'
+            title=' Expertise Immobilière'
+            description='Expertise immobilière complète (Diagnostics, expertises, ingénierie du bâtiment.)'
+          />
+          <Service
+            icon='conseil.png'
+            title='Conseils'
+            separation
+            description="Optimisez votre confort et vos dépenses énergétiques avec notre expertise en rénovation énergétique. Bénéficiez d'un audit personnalisé pour identifier les solutions adaptées à votre logement."
+            leo
+          />
+        </div>
+      </section>
+      <AskDevis />
+      <Actu />
+    </Container>
+    <BeforeFoot />
+    <Footer />
+  </body>
+</html>
