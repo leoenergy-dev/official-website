@@ -11,8 +11,6 @@ const { date, titre, descript, post } = Astro.props as Props;
 const description =
   descript.length > 150 ? `${descript?.substring(0, 150)}...` : descript;
 
-const Content = await post;
-console.log(Content);
 ---
 
 <div class='flex p-9 items-start items'>
@@ -23,9 +21,6 @@ console.log(Content);
     <div class='content-item'>
       <div class='itemsTitre'>{titre}</div>
       <div class='mb-4'>{description}</div>
-      <div id='body'>
-        {Content}
-      </div>
       <button class='font-bold principal-blue uppercase'>lire plus</button>
     </div>
   </div>
