@@ -1,0 +1,71 @@
+---
+import Champ from "./Champ.astro";
+---
+
+<div class='form px-[50px]'>
+  <form action='' class='w-full p-[50px] blue-light'>
+    <div class=''>
+      <Champ
+        type='text'
+        titre='Nom et Prenom *'
+        placeholder='Nom complet'
+        champ='name'
+        required
+      />
+      <Champ
+        type='tel'
+        titre='Telephone *'
+        placeholder='Votre numero de telephone'
+        champ='telephone'
+        required
+      />
+      <Champ
+        type='text'
+        titre='Entreprise (optionnel)'
+        placeholder='Nom de votre Entreprise'
+        champ='entreprise'
+      />
+      <Champ
+        type='text'
+        titre='Pays *'
+        placeholder='Votre Pays de residence'
+        champ='pays'
+        required
+      />
+      <Champ
+        type='text'
+        titre='Ville *'
+        placeholder='Votre Ville de residence'
+        champ='ville'
+        required
+      />
+      <Champ
+        type='textarea'
+        titre='Message *'
+        placeholder='Votre message'
+        champ='message'
+        required
+      />
+
+      <div class='flex'>
+        <div class='w-[35%]'></div>
+        <div class='flex-1'>
+          <button
+            class='px-9 py-3 text-base uppercase font-bold border rounded-full mt-6 bg-blue text-white'>
+            envoyer
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<style>
+  .form {
+    width: 1080px;
+    margin: 0 auto 90px;
+  }
+  .blue-light {
+    background-color: var(--blue-light);
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+interface Props {
+  type: "text" | "tel" | "email" | "textarea";
+  placeholder: string;
+  titre: string;
+  champ: string;
+  required?: boolean;
+}
+
+const { type = "text", champ, placeholder, titre, required } = Astro.props;
+---
+
+<div class='champ'>
+  <label for={champ}>{titre}</label>
+  {
+    type !== "textarea" ? (
+      <input
+        type={type}
+        class='flex'
+        placeholder={placeholder}
+        name={champ}
+        required={required}
+      />
+    ) : (
+      <textarea
+        class='textarea'
+        name={champ}
+        placeholder={placeholder}
+        required={required}
+      />
+    )
+  }
+</div>
+
+<style>
+  .champ {
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+
+    label,
+    input {
+      display: block;
+      padding: 7px 12px;
+    }
+
+    label {
+      width: 35%;
+      font-weight: 700;
+    }
+
+    input {
+      flex: 1;
+    }
+  }
+
+  .champ + .champ {
+    margin-top: 24px;
+  }
+
+  .textarea {
+    flex: 1;
+    resize: none;
+    height: 300px;
+    padding: 7px 12px;
+  }
+</style>

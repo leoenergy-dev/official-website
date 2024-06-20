@@ -8,13 +8,13 @@ import BeforeFoot from "../components/BeforeFoot.astro";
 import Entete from "../components/entete.astro";
 import Banniere from "../components/Banniere.astro";
 import Story from "../components/Story.astro";
-import HeadFile from "../components/HeadFile.astro";
+import BaseHead from "../components/BaseHead.astro";
 ---
 
 <!doctype html>
 <html lang='en'>
   <head>
-    <HeadFile />
+    <BaseHead />
     <style>
       .banniere {
         @apply mb-28 mt-6;
@@ -27,18 +27,18 @@ import HeadFile from "../components/HeadFile.astro";
       <Entete titre="l'entreprise">
         Un service porté par des <span class='principal-yellow'>passionés</span>
       </Entete>
-      <Banniere image='/banniere.jpg' text />
+      <Banniere image='/banniere.png' text />
       <div class='mb-[200px]'>
         <div class='text-[40px] text-center font-bold uppercase mb-9'>
           Qui sommes nous
         </div>
         <Story
-          image='/image_1.jpg'
+          image='/image_1.png'
           titre='un groupe'
           description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum interdum eu eros malesuada pharetra. Maecenas vel lacinia ligula. Aliquam mi eros, lacinia vitae enim nec, posuere maximus magna. Curabitur fringilla massa sit amet nulla luctus, eu iaculis dolor consequat. Nulla interdum eros eget elit semper volutpat in quis lorem. Sed ac erat sed erat suscipit malesuada. Praesent finibus purus sed euismod malesuada. Etiam tincidunt, est eget fermentum accumsan, est nisl scelerisque risus, commodo ornare ipsum sapien eu magna. Suspendisse non nulla accumsan, hendrerit justo ac, consequat mi. Nulla facilisi. Donec sed placerat nisl, ac accumsan ante. Ut efficitur leo vel enim viverra ultrices. Sed metus ante, finibus id suscipit non, cursus eget sapien. Nunc vestibulum nisl sed magna posuere, et commodo arcu sagittis. Nulla facilisi.'
         />
         <Story
-          image='/image_2.jpg'
+          image='/image_2.png'
           titre='Une mission'
           rtl
           description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum interdum eu eros malesuada pharetra. Maecenas vel lacinia ligula. Aliquam mi eros, lacinia vitae enim nec, posuere maximus magna. Curabitur fringilla massa sit amet nulla luctus, eu iaculis dolor consequat. Nulla interdum eros eget elit semper volutpat in quis lorem. Sed ac erat sed erat suscipit malesuada. Praesent finibus purus sed euismod malesuada. Etiam tincidunt, est eget fermentum accumsan, est nisl scelerisque risus, commodo ornare ipsum sapien eu magna. Suspendisse non nulla accumsan, hendrerit justo ac, consequat mi. Nulla facilisi. Donec sed placerat nisl, ac accumsan ante. Ut efficitur leo vel enim viverra ultrices. Sed metus ante, finibus id suscipit non, cursus eget sapien. Nunc vestibulum nisl sed magna posuere, et commodo arcu sagittis. Nulla facilisi.'

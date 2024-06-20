@@ -6,13 +6,13 @@ import Service from "../components/Service.astro";
 import AskDevis from "../components/AskDevis.astro";
 import Actu from "../components/Actu.astro";
 import BeforeFoot from "../components/BeforeFoot.astro";
-import HeadFile from "../components/HeadFile.astro";
+import BaseHead from "../components/BaseHead.astro";
 ---
 
 <!doctype html>
 <html lang='en'>
   <head>
-    <HeadFile />
+    <BaseHead />
     <style>
       .banniere {
         @apply mb-28 mt-6;
@@ -24,7 +24,7 @@ import HeadFile from "../components/HeadFile.astro";
     <Container>
       <div class='banniere'>
         <div class='relative'>
-          <img src='/banniere_1.jpg' alt='' />
+          <img src='/banniere_1.png' alt='' width='100%' />
           <div
             class='absolute top-0 left-0 w-full h-full bg-blue-20 lg:p-[47px] flex items-end justify-start'>
             <div class='lg:w-[55%] text-5xl font-extrabold text-white mb-12'>
@@ -54,7 +54,7 @@ import HeadFile from "../components/HeadFile.astro";
         <div class='relative bg-blue p-[50px] mt-24 flex gap-[50px]'>
           <div class='w-[368px] relative'>
             <img
-              src='/humain.jpg'
+              src='/humain.png'
               alt=''
               width='100%'
               class='h-[427px] object-cover absolute bottom-0'

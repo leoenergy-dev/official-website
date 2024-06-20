@@ -1,0 +1,20 @@
+---
+import FaqItem from "../components/faqItem";
+---
+
+<div class='form px-[50px]'>
+  <FaqItem client:load />
+  <FaqItem client:load />
+  <FaqItem client:load />
+  <FaqItem client:load />
+</div>
+
+<style>
+  .form {
+    width: 1080px;
+    margin: 0 auto 90px;
+  }
+  .faqitem + .faqitem {
+    margin-top: 24px;
+  }
+</style>

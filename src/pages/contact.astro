@@ -3,14 +3,12 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Container from "../components/Container.astro";
 import AskDevis from "../components/AskDevis.astro";
+import Actu from "../components/Actu.astro";
 import BeforeFoot from "../components/BeforeFoot.astro";
 import Entete from "../components/entete.astro";
+import Formulaire from "../components/formulaire.astro";
+import FAQ from "../components/FAQ.astro";
 import BaseHead from "../components/BaseHead.astro";
-
-import ActuItem from "../components/ActuItem";
-import { getCollection } from "astro:content";
-
-const posts = await getCollection("blog");
 ---
 
 <!doctype html>
@@ -26,22 +24,18 @@ const posts = await getCollection("blog");
   <body>
     <Header />
     <Container>
-      <Entete> Actualités </Entete>
+      <Entete> Contact </Entete>
 
-      <div>
-        {
-          posts.map(async (post) => (
-            <ActuItem
-              titre={post.data.title}
-              date={post.data.pubDate}
-              descript={post.data.description}
-              post={post.body}
-              client:load
-            />
-          ))
-        }
+      <div class='mb-[200px]'>
+        <div class='text-[40px] text-center font-bold uppercase mb-9'>
+          Que desirez vous ?
+        </div>
+        <Formulaire />
+        <div class='text-[40px] text-center font-bold uppercase mb-9'>FAQ</div>
+        <FAQ />
       </div>
       <AskDevis />
+      <Actu />
     </Container>
     <BeforeFoot />
     <Footer />

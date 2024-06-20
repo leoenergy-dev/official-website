@@ -1,0 +1,45 @@
+import { useState } from "react";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
+interface ActuItem {
+    date: Date;
+    titre: string;
+    descript: string;
+    post?: any
+}
+
+export default function ActuItem({ date, titre, descript, post }: ActuItem) {
+    const D = new Date(date).toDateString()
+    const [read, setreader] = useState<boolean>(false)
+
+
+    const description = descript.length > 150 ? `${descript?.substring(0, 150)}...` : descript;
+    return (
+        <div id="" className='flex p-9 items-start bg-[#F6FBFF] mb-6 gap-9'>
+            <div className='w-[250px] font-bold text-2xl principal-blue'>
+                <span>{D}</span>
+            </div>
+            <div className='flex-1'>
+                <div className='w-[80%]'>
+                    <div className='text-3xl font-bold mb-4'>{titre}</div>
+                    {!read && <div className='mb-4'>{description}</div>}
+
+                    {
+                        read && (<div className="document">
+                            <Markdown remarkPlugins={[remarkGfm]}>{post}</Markdown>
+                        </div>)
+                    }
+
+                    <button onClick={() => setreader(!read)} className='font-bold principal-blue uppercase'>
+                        {
+                            !read
+                                ? "lire plus"
+                                : "close"
+                        }
+                    </button>
+                </div>
+            </div>
+        </div>
+    )
+}
