@@ -1,14 +1,25 @@
+---
+import { getCollection } from "astro:content";
+
+const posts = (await getCollection("blog")).sort(
+  (a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf()
+);
+const lastPost = posts[0];
+const descript =
+  lastPost.data.description.length > 200
+    ? `${lastPost.data.description.substring(0, 200)}...`
+    : lastPost.data.description;
+---
+
 <section class='actu' style="background-image: url('/actu.png');">
   <div class='bg-[#0004] w-full h-full p-[50px] flex justify-end'>
     <div class='w-[450px] p-[32px] bg-white'>
       <div class='titre pt-4'>Actualités</div>
       <div class='text-2xl font-bold pb-4'>
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit
+        {lastPost.data.title}
       </div>
       <div class='pb-4'>
-        Ut molestie auctor suscipit. Nulla id odio tellus. Proin sagittis at mi
-        vel mattis. In euismod neque imperdiet mi hendrerit aliquam. Integer
-        quis sapien ac diam aliquam interdum at at sem. ...
+        {descript}
       </div>
       <a href='/acticles' class='uppercase text-base font-bold'>lire plus</a>
     </div>

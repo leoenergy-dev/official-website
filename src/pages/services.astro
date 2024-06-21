@@ -1,0 +1,49 @@
+---
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Container from "../components/Container.astro";
+import AskDevis from "../components/AskDevis.astro";
+import Actu from "../components/Actu.astro";
+import BeforeFoot from "../components/BeforeFoot.astro";
+import Entete from "../components/entete.astro";
+import ServicesElement from "../components/Services";
+import BaseHead from "../components/BaseHead.astro";
+
+import { type imageData } from "../components/Services";
+
+const data: imageData[] = [
+  { image: "/image_1.png", titre: "image No 1" },
+  { image: "/image_2.png", titre: "image No 2" },
+  { image: "/banniere_1.png", titre: "image No 3" },
+  { image: "/banniere_2.png", titre: "image No 4" },
+];
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead />
+    <style>
+      body {
+        overflow-x: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <Container>
+      <Entete> Services </Entete>
+
+      <ServicesElement
+        data={data}
+        client:load
+        titre={"En quoi consiste un devis ?"}
+        description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum interdum eu eros malesuada pharetra. Maecenas vel lacinia ligula. Aliquam mi eros, lacinia vitae enim nec, posuere maximus magna. Curabitur fringilla massa sit amet nulla luctus, eu iaculis dolor consequat. Nulla interdum eros eget elit semper volutpat in quis lorem. Sed ac erat sed erat suscipit malesuada. Praesent finibus purus sed euismod malesuada. Etiam tincidunt, est eget fermentum accumsan, est nisl scelerisque risus, commodo ornare ipsum sapien eu magna. Suspendisse non nulla accumsan, hendrerit justo ac, consequat mi. Nulla facilisi. Donec sed placerat nisl, ac accumsan ante. Ut efficitur leo vel enim viverra ultrices. Sed metus ante, finibus id suscipit non, cursus eget sapien. Nunc vestibulum nisl sed magna posuere, et commodo arcu sagittis. Nulla facilisi.'
+      />
+      <AskDevis />
+      <Actu />
+    </Container>
+    <BeforeFoot />
+    <Footer />
+  </body>
+</html>
