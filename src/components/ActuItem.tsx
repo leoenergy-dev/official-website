@@ -7,22 +7,25 @@ interface ActuItem {
     titre: string;
     descript: string;
     post?: any
+    delay?: number
 }
 
-export default function ActuItem({ date, titre, descript, post }: ActuItem) {
+export default function ActuItem({ date, titre, descript, post, delay }: ActuItem) {
     const D = new Date(date).toDateString()
     const [read, setreader] = useState<boolean>(false)
 
 
     const description = descript.length > 150 ? `${descript?.substring(0, 150)}...` : descript;
     return (
-        <div id="" className='flex p-9 items-start bg-[#F6FBFF] mb-6 gap-9'>
-            <div className='w-[250px] font-bold text-2xl principal-blue'>
+        <div id="" className='flex flex-col lg:flex-row p-5 lg:p-9 items-start bg-[#F6FBFF] mb-3 lg:mb-6 gap-9' data-aos='fade-up'
+            data-aos-duration='1000'
+            data-aos-delay={`${delay}`}>
+            <div className='w-[250px] font-bold text-base lg:text-2xl principal-blue'>
                 <span>{D}</span>
             </div>
             <div className='flex-1'>
                 <div className='w-[80%]'>
-                    <div className='text-3xl font-bold mb-4'>{titre}</div>
+                    <div className='text-2xl lg:text-3xl font-bold mb-4'>{titre}</div>
                     {!read && <div className='mb-4'>{description}</div>}
 
                     {

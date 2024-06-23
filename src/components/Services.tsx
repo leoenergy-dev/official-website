@@ -3,7 +3,8 @@ import CarouselItem from "./carousel"
 
 export type imageData = {
     image: string,
-    titre: string
+    titre: string,
+    delay?: number
 }
 
 interface ServicesElement {
@@ -66,16 +67,23 @@ export default function ServicesElement({ children, data, titre, description }: 
 
     return (
         <div>
-            <div className="md:flex gap-[30px] items-start px-[50px]">
-                <div className="w-[277px] aspect-square border">
+            <div className="md:flex gap-[30px] items-start px-5 lg:px-[50px]">
+                <div className="w-[120px] lg:w-[277px] aspect-square border mb-5 lg:mb-0"
+                    data-aos='fade-up'
+                    data-aos-duration='1000'>
                     <img src="/logo_leo_blanc.png" alt="logo_leo" />
                 </div>
-                <div className="flex-1">
-                    <div className="text-3xl font-bold mb-2 uppercase">{titre}</div>
-                    <div>{description}</div>
+                <div className="flex-1"
+                    data-aos='fade-down'
+                    data-aos-duration='1000'
+                >
+                    <div className="text-2xl lg:text-3xl font-bold mb-2 uppercase">{titre}</div>
+                    <div data-aos='fade-up'
+                        data-aos-duration='1000'
+                        data-aos-delay='500'>{description}</div>
                     <div>
                         <div className="w-full">
-                            <div className="h-[150px] flex gap-5 items-end pb-6">
+                            <div className="hidden h-[150px] lg:flex gap-5 items-end pb-6">
                                 <button onClick={() => setCount(count + 1)} className={`w-[72px] aspect-square rounded-full flex items-center justify-center text-white bg-blue hover:bg-blue-900`}>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="M7.828 11H20v2H7.828l5.364 5.364l-1.414 1.414L4 12l7.778-7.778l1.414 1.414z" /></svg>
                                 </button>
@@ -83,9 +91,9 @@ export default function ServicesElement({ children, data, titre, description }: 
                                     <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24"><path fill="currentColor" d="m16.172 11l-5.364-5.364l1.414-1.414L20 12l-7.778 7.778l-1.414-1.414L16.172 13H4v-2z" /></svg>
                                 </button>
                             </div>
-                            <div ref={carouselMain} className="w-full relative h-[500px]">
+                            <div ref={carouselMain} className="w-full relative h-[300px] lg:h-[500px] mt-5 lg:mt-0 overflow-x-auto lg:overflow-x-visible">
                                 <div ref={carouselContainer} className={`flex gap-5 absolute transition-transform ease-out duration-500`} style={{ transform: `translateX(${position}px)` }}>
-                                    {data.map((el, key) => <CarouselItem image={el.image} titre={el.titre} key={key} />)}
+                                    {data.map((el, key) => <CarouselItem image={el.image} titre={el.titre} key={key} delay={100 * (key * 2)} />)}
                                 </div>
                             </div>
                         </div>

@@ -1,0 +1,18 @@
+---
+interface Props {
+  url: URL | string;
+  delay?: number;
+}
+
+const { url, delay } = Astro.props;
+---
+
+<a
+  class=''
+  href={url}
+  data-aos='fade-down'
+  data-aos-delay=`${delay}`
+  data-aos-duration='1000'
+  data-aos-anchor='.active-menu'>
+  <slot />
+</a>

@@ -1,0 +1,98 @@
+---
+
+---
+
+<style>
+  .banniere {
+    @apply mb-[200px] lg:mb-28 lg:mt-6;
+  }
+
+  .diapo_1,
+  .diapo_2 {
+    height: 622px;
+    width: 100%;
+    position: absolute;
+  }
+</style>
+<div class='banniere'>
+  <div class='relative h-[622px] lg:block'>
+    <div class='relative h-full overflow-hidden'>
+      <div class='diapo_1'>
+        <img src='/banniere_1.png' alt='' width='100%' />
+      </div>
+      <div class='diapo_2'>
+        <img src='/banniere_2.png' alt='' width='100%' />
+      </div>
+    </div>
+    <div
+      class='absolute top-0 left-0 w-full h-full bg-blue-20 lg:p-[47px] flex items-end justify-start'>
+      <div
+        class='w-[80%] text-center lg:text-left lg:w-[55%] text-4xl lg:text-5xl font-extrabold text-white mb-24 lg:mb-12 mx-auto lg:mx-0'>
+        Faites des économies d'énergie pour un confort thermique à petit prix
+      </div>
+    </div>
+    <div
+      class='bg-yellow absolute bottom-[-234px] lg:bottom-[-154px] lg:bottom-[-64px] right-[5%] lg:right-[47px] w-[90%] lg:w-[428px]'
+      data-aos='fade-down'
+      data-aos-delay='200'
+      data-aos-duration='1000'>
+      <div class='relative p-7 lg:p-[47px] overflow-hidden'>
+        <div class='absolute top-[0] right-[0]'>
+          <img src='/flash.png' alt='' />
+        </div>
+        <div class='font-semibold mb-10 relative z-[2]'>
+          Transition énergétique réussie : Expertise et conseils sur mesure pour
+          des économies concrètes. Contactez-nous et démarrons votre projet dès
+          maintenant!
+        </div>
+        <a
+          data-aos='fade-down'
+          data-aos-delay='400'
+          data-aos-duration='1000'
+          href='/contact'
+          class='flex w-full h-[56px] bg-[#0005] font-semibold justify-center items-center text-white rounded-full relative z-[2] uppercase text-base'>
+          Contactez-nous
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline src='/js/anime.min.js'></script>
+<script>
+  const banniere = document.querySelector(".banniere") as HTMLDivElement;
+
+  const width = banniere.offsetWidth;
+
+  let change = 0;
+  setInterval(() => {
+    if (change === 0) {
+      anime({
+        targets: ".diapo_1",
+        translateX: [-width, 0],
+      });
+      setTimeout(() => {
+        anime({
+          targets: ".diapo_1",
+          translateX: width,
+          delay: 500,
+        });
+      }, 4500);
+
+      change = 1;
+    } else {
+      anime({
+        targets: ".diapo_2",
+        translateX: [-width, 0],
+      });
+      setTimeout(() => {
+        anime({
+          targets: ".diapo_2",
+          translateX: [width],
+          delay: 500,
+        });
+      }, 4500);
+      change = 0;
+    }
+  }, 5000);
+</script>

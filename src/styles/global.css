@@ -23,6 +23,7 @@
 	--text-color : #2e2e2e;
 }
 
+
 body {
 	font-family: 'Montserrat', sans-serif;
 	margin: 0;
@@ -30,9 +31,11 @@ body {
 	word-wrap: break-word;
 	overflow-wrap: break-word;
 	color: var(--text-color) ;
-	font-size: 20px;
 	line-height: var(--line-hieght-normal);
+
+	@apply text-[16px] lg:text-[20px]
 }
+
 
 .principal-yellow {
 	color: var(--principal-yello);

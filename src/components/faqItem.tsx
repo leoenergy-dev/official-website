@@ -10,9 +10,9 @@ export default function FaqItems({
 }: FaqItems) {
     const [active, setActive] = useState<boolean>(false)
     return (
-        <div className="mb-6 px-[50px] py-7 bg-[#F6FBFF]">
+        <div className="mb-6 px-4 lg:px-[50px] py-4 lg:py-7  bg-[#F6FBFF]">
             <div className='flex items-center justify-between'>
-                <div className={`font-semibold w-[80%] transition-all ease-in-out duration-200 ${active ? 'text-[28px] mb-6' : ''}`}>
+                <div className={`font-semibold w-[80%] transition-all ease-in-out duration-200 ${active ? 'text-lg lg:text-[28px] mb-6' : ''}`}>
                     {intitule}
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi repellat
                     mollitia,

@@ -7,57 +7,30 @@ import AskDevis from "../components/AskDevis.astro";
 import Actu from "../components/Actu.astro";
 import BeforeFoot from "../components/BeforeFoot.astro";
 import BaseHead from "../components/BaseHead.astro";
+
+import BanniereAccueil from "../components/Banniere_Accueil.astro";
 ---
 
 <!doctype html>
 <html lang='en'>
   <head>
     <BaseHead />
-    <style>
-      .banniere {
-        @apply mb-28 mt-6;
-      }
-    </style>
   </head>
   <body>
     <Header />
     <Container>
-      <div class='banniere'>
-        <div class='relative'>
-          <img src='/banniere_1.png' alt='' width='100%' />
-          <div
-            class='absolute top-0 left-0 w-full h-full bg-blue-20 lg:p-[47px] flex items-end justify-start'>
-            <div class='lg:w-[55%] text-5xl font-extrabold text-white mb-12'>
-              Optimiser vos dépenses énergitiques, booster votre avenir.
-            </div>
-          </div>
-          <div class='bg-yellow absolute bottom-[-64px] right-[47px] w-[428px]'>
-            <div class='relative p-[47px] overflow-hidden'>
-              <div class='absolute top-[0] right-[0]'>
-                <img src='/flash.png' alt='' />
-              </div>
-              <div class='font-semibold mb-10 relative z-[2]'>
-                Transition énergétique réussie : Expertise et conseils sur
-                mesure pour des économies concrètes. Contactez-nous et démarrons
-                votre projet dès maintenant!
-              </div>
-              <a
-                href='/contact'
-                class='flex w-full h-[56px] bg-[#0005] font-semibold justify-center items-center text-white rounded-full relative z-[2] uppercase text-base'>
-                Contactez-nous
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
+      <BanniereAccueil />
       <div class='pt-1'>
-        <div class='relative bg-blue p-[50px] mt-24 flex gap-[50px]'>
-          <div class='w-[368px] relative'>
+        <div class='relative bg-blue p-[50px] mt-24 lg:flex gap-[50px]'>
+          <div
+            class='w-[100%] mb-6 lg:mb-0 lg:w-[368px] relative'
+            data-aos='fade-up'
+            data-aos-duration='1000'>
             <img
               src='/humain.png'
               alt=''
               width='100%'
-              class='h-[427px] object-cover absolute bottom-0'
+              class='h-[350px] lg:h-[427px] object-cover lg:absolute bottom-0'
             />
           </div>
           <div class='flex-1'>
@@ -73,6 +46,8 @@ import BaseHead from "../components/BaseHead.astro";
               et, dignissim ex. Sed blandit a enim vitae lacinia.
             </div>
             <a
+              data-aos='fade-up'
+              data-aos-duration='1000'
               href='/entreprise'
               class='inline-flex w-fit h-[56px] bg-white font-semibold justify-center items-center text-gray-800 rounded-full relative z-[2] uppercase text-base px-10 mt-5'>
               en savoir plus
@@ -80,21 +55,23 @@ import BaseHead from "../components/BaseHead.astro";
           </div>
         </div>
       </div>
-      <section class='mt-[167px]'>
+      <section class='mt-[50px] lg:mt-[167px]'>
         <div class='py-5'>
           <div class='mx-auto titre text-center'>Services</div>
         </div>
-        <div class='flex'>
+        <div class='lg:flex px-4 lg:px-0'>
           <Service
             icon='/audit.png'
             title='Audit & Analyse'
             yellow
             description='Optimisez vos performances énergétiques et réglementaires avec nos audits et diagnostics immobiliers.'
+            delay={100}
           />
           <Service
             icon='/expert.png'
             title=' Expertise Immobilière'
             description='Expertise immobilière complète (Diagnostics, expertises, ingénierie du bâtiment.)'
+            delay={300}
           />
           <Service
             icon='conseil.png'
@@ -102,6 +79,7 @@ import BaseHead from "../components/BaseHead.astro";
             separation
             description="Optimisez votre confort et vos dépenses énergétiques avec notre expertise en rénovation énergétique. Bénéficiez d'un audit personnalisé pour identifier les solutions adaptées à votre logement."
             leo
+            delay={500}
           />
         </div>
       </section>
@@ -110,5 +88,30 @@ import BaseHead from "../components/BaseHead.astro";
     </Container>
     <BeforeFoot />
     <Footer />
+    <script is:inline src='https://unpkg.com/aos@next/dist/aos.js'></script>
+    <script>
+      AOS.init({
+        // Global settings:
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: "DOMContentLoaded", // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: "aos-init", // class applied after initialization
+        animatedClassName: "aos-animate", // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 50, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 3000, with step 50ms
+        duration: 300, // values from 0 to 3000, with step 50ms
+        easing: "ease", // default easing for AOS animations
+        once: false, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: "top-bottom", // defines which position of the element regarding to window should trigger the animation
+      });
+
+      console.log(AOS);
+    </script>
   </body>
 </html>

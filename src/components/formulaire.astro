@@ -2,8 +2,8 @@
 import Champ from "./Champ.astro";
 ---
 
-<div class='form px-[50px]'>
-  <form action='' class='w-full p-[50px] blue-light'>
+<div class='form px-6 lg:px-[50px]'>
+  <form action='' class='w-full p-[20px] lg:p-[50px] blue-light'>
     <div class=''>
       <Champ
         type='text'
@@ -48,7 +48,7 @@ import Champ from "./Champ.astro";
       />
 
       <div class='flex'>
-        <div class='w-[35%]'></div>
+        <div class='w-[25%] lg:w-[35%]'></div>
         <div class='flex-1'>
           <button
             class='px-9 py-3 text-base uppercase font-bold border rounded-full mt-6 bg-blue text-white'>
@@ -64,6 +64,8 @@ import Champ from "./Champ.astro";
   .form {
     width: 1080px;
     margin: 0 auto 90px;
+
+    @apply w-full lg:w-[1080px];
   }
   .blue-light {
     background-color: var(--blue-light);

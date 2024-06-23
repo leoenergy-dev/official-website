@@ -6,12 +6,17 @@ interface Props {
   yellow?: boolean;
   description: string;
   leo?: boolean;
+  delay?: number;
 }
-const { separation, icon, title, yellow, description, leo } =
+const { separation, icon, title, yellow, description, leo, delay } =
   Astro.props as Props;
 ---
 
-<div class=`service ${yellow ? 'bg-yellow' : 'bg-bleu-10'}`>
+<div
+  class=`service ${yellow ? 'bg-yellow' : 'bg-bleu-10'}`
+  data-aos='fade-down'
+  data-aos-delay=`${delay}`
+  data-aos-duration='1000'>
   {separation && <div class='separation' />}
   <div class='relative overflow-hidden p-[50px]'>
     <div><img src={icon} alt='' /></div>
@@ -34,10 +39,7 @@ const { separation, icon, title, yellow, description, leo } =
 
 <style>
   .service {
-    flex: 1;
-    height: 488px;
-    display: flex;
-    position: relative;
+    @apply h-auto lg:h-[488px] flex-1 flex relative;
   }
 
   .bg-bleu-10 {
@@ -53,5 +55,7 @@ const { separation, icon, title, yellow, description, leo } =
     top: 50%;
     transform: translateY(-50%);
     border-radius: 50px;
+
+    @apply hidden lg:block;
   }
 </style>

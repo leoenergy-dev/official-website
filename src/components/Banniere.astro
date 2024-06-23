@@ -7,21 +7,29 @@ interface Props {
 const { image, text } = Astro.props as Props;
 ---
 
-<section class='pb-[160px]'>
-  <div class='h-[680px] b_images' style=`background-image: url('${image}') ;`>
+<section class='pb-[200px] lg:pb-[160px]'>
+  <div
+    class='h-[100dvw] lg:h-[680px] b_images'
+    style=`background-image: url('${image}') ;`>
     {
       text && (
-        <div class='relative px-[50px] w-full h-full'>
-          <div class='absolute bottom-[-50px] h-[484px] bg-blue w-[440px]'>
+        <div
+          class='relative lg:px-[50px] w-full h-full flex lg:block justify-center'
+          data-aos='fade-up'
+          data-aos-duration='1000'
+          data-aos-delay='500'>
+          <div class='absolute bottom-[-150px] lg:bottom-[-50px] lg:h-[484px] bg-blue w-[90%] lg:w-[440px]'>
             <div class='relative p-[50px]'>
               <div class='absolute left-3 top-3 w-[100px] aspect-square'>
                 <img src='/Frame.png' alt='' width='100%' />
               </div>
-              <div class='relative z-[2] text-[32px] font-medium citattion text-white'>
+              <div class='relative z-[2] text-xl lg:text-[32px] font-medium citattion text-white'>
                 Derrière chaque rénovation énergétique réussie, il y a une
                 équipe passionnée qui s'engage à faire la différence.
               </div>
-              <div class='mt-8 text-2xl text-white'>- Thomas Dubois</div>
+              <div class='mt-8 text-lg lg:text-2xl text-white'>
+                - Thomas Dubois
+              </div>
             </div>
           </div>
         </div>

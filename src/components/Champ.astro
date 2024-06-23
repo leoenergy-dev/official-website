@@ -34,9 +34,7 @@ const { type = "text", champ, placeholder, titre, required } = Astro.props;
 
 <style>
   .champ {
-    width: 100%;
-    display: flex;
-    align-items: flex-start;
+    @apply w-full block lg:flex items-start;
 
     label,
     input {
@@ -45,12 +43,13 @@ const { type = "text", champ, placeholder, titre, required } = Astro.props;
     }
 
     label {
-      width: 35%;
       font-weight: 700;
+      @apply w-full lg:w-[35%];
     }
 
     input {
       flex: 1;
+      @apply w-full lg:flex-1;
     }
   }
 
@@ -63,5 +62,7 @@ const { type = "text", champ, placeholder, titre, required } = Astro.props;
     resize: none;
     height: 300px;
     padding: 7px 12px;
+
+    @apply w-full lg:flex-1 resize-none lg:h-[300px];
   }
 </style>

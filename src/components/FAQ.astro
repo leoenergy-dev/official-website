@@ -2,7 +2,7 @@
 import FaqItem from "../components/faqItem";
 ---
 
-<div class='form px-[50px]'>
+<div class='form px-4 lg:px-[50px]'>
   <FaqItem client:load />
   <FaqItem client:load />
   <FaqItem client:load />
@@ -11,8 +11,8 @@ import FaqItem from "../components/faqItem";
 
 <style>
   .form {
-    width: 1080px;
     margin: 0 auto 90px;
+    @apply w-full lg:w-[1080px];
   }
   .faqitem + .faqitem {
     margin-top: 24px;
