@@ -1,0 +1,39 @@
+<!-- <script is:inline src='/js/anime.es.js'></script>
+<script>
+  import anime from "/js/anime.es.js";
+  const banniere = document.querySelector(".banniere") as HTMLDivElement;
+
+  const width = banniere.offsetWidth;
+
+  let change = 0;
+  setInterval(() => {
+    if (change === 0) {
+      anime({
+        targets: ".diapo_1",
+        translateX: [-width, 0],
+      });
+      setTimeout(() => {
+        anime({
+          targets: ".diapo_1",
+          translateX: width,
+          delay: 500,
+        });
+      }, 4500);
+
+      change = 1;
+    } else {
+      anime({
+        targets: ".diapo_2",
+        translateX: [-width, 0],
+      });
+      setTimeout(() => {
+        anime({
+          targets: ".diapo_2",
+          translateX: [width],
+          delay: 500,
+        });
+      }, 4500);
+      change = 0;
+    }
+  }, 5000);
+</script> -->

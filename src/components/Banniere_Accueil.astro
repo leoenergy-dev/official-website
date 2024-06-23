@@ -67,11 +67,13 @@
   let change = 0;
   setInterval(() => {
     if (change === 0) {
+      // @ts-ignore
       anime({
         targets: ".diapo_1",
         translateX: [-width, 0],
       });
       setTimeout(() => {
+        // @ts-ignore
         anime({
           targets: ".diapo_1",
           translateX: width,
@@ -81,11 +83,13 @@
 
       change = 1;
     } else {
+      // @ts-ignore
       anime({
         targets: ".diapo_2",
         translateX: [-width, 0],
       });
       setTimeout(() => {
+        // @ts-ignore
         anime({
           targets: ".diapo_2",
           translateX: [width],
