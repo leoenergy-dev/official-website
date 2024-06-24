@@ -1,6 +1,8 @@
-<!-- <script is:inline src='/js/anime.es.js'></script>
+
+<script
+  is:inline
+  src='https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js'></script>
 <script>
-  import anime from "/js/anime.es.js";
   const banniere = document.querySelector(".banniere") as HTMLDivElement;
 
   const width = banniere.offsetWidth;
@@ -8,11 +10,13 @@
   let change = 0;
   setInterval(() => {
     if (change === 0) {
+      // @ts-ignore
       anime({
         targets: ".diapo_1",
         translateX: [-width, 0],
       });
       setTimeout(() => {
+        // @ts-ignore
         anime({
           targets: ".diapo_1",
           translateX: width,
@@ -22,11 +26,13 @@
 
       change = 1;
     } else {
+      // @ts-ignore
       anime({
         targets: ".diapo_2",
         translateX: [-width, 0],
       });
       setTimeout(() => {
+        // @ts-ignore
         anime({
           targets: ".diapo_2",
           translateX: [width],
@@ -36,4 +42,4 @@
       change = 0;
     }
   }, 5000);
-</script> -->
+</script>
