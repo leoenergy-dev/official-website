@@ -11,7 +11,7 @@ const { image, description, titre, rtl } = Astro.props as Props;
 
 <section class='story px-5 lg:px-[50px]'>
   <div
-    class=`flex flex-col lg:flex-row gap-[50px] ${rtl ? 'lg:flex-row-reverse': ''}`>
+    class=`flex items-start flex-col lg:flex-row gap-[50px] ${rtl ? 'lg:flex-row-reverse': ''}`>
     <div class='w-full lg:w-[590px] aspect-square'>
       <img
         src=`${image}`
@@ -27,9 +27,7 @@ const { image, description, titre, rtl } = Astro.props as Props;
       data-aos-duration='1000'
       data-aos-delay='500'>
       {titre && <div class='text-2xl font-bold uppercase'>{titre}</div>}
-      <div class=''>
-        {description}
-      </div>
+      <div set:html={description} />
     </div>
   </div>
 </section>

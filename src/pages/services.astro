@@ -17,6 +17,36 @@ const data: imageData[] = [
   { image: "/banniere_1.png", titre: "image No 3" },
   { image: "/banniere_2.png", titre: "image No 4" },
 ];
+
+const services: { title: string; services: string }[] = [
+  {
+    title:
+      "L'audit énergétique réglementaire : un investissement pour une maison plus performante",
+    services:
+      "L'audit énergétique réglementaire, obligatoire pour certains biens immobiliers depuis le 1er avril 2023, est un examen complet de la performance énergétique d'un logement. Il permet d'identifier les points faibles et de proposer des solutions pour réduire la consommation d'énergie et les factures. Réalisé par un professionnel certifié, il s'avère être un investissement judicieux pour améliorer le confort, la valeur patrimoniale et l'empreinte environnementale de votre bien. N'hésitez pas à vous renseigner sur les aides financières disponibles pour couvrir une partie des frais d'audit.",
+  },
+  {
+    title: "l'audit énergétique tertiaire :",
+    services:
+      "Un audit énergétique tertiaire analyse la performance énergétique des bâtiments professionnels (bureaux, écoles, hôpitaux, etc.) pour identifier les sources de gaspillage et proposer des améliorations. Depuis le 1er avril 2023, il est obligatoire pour les bâtiments de plus de 1000m². Réalisé par un professionnel certifié RGE, l'audit comprend la collecte de données, des visites sur site, une analyse et modélisation, et un rapport détaillé avec des recommandations. Des aides financières (CEE, ANAH, aides locales) soutiennent les entreprises. Les bénéfices incluent la réduction des coûts énergétiques, l'amélioration du confort, la valorisation immobilière et la réduction de l'empreinte carbone.",
+  },
+  {
+    title:
+      "Maîtriser votre consommation d'eau et économiser grâce à la récupération d'eau de pluie",
+    services:
+      "De nombreux gestes simples au quotidien, comme installer des aérateurs de robinet ou privilégier les douches aux bains, permettent de réduire sa consommation d'eau et ainsi de protéger cette ressource précieuse. Pour aller plus loin, la récupération d'eau de pluie offre une solution écologique et économique. Ce système permet de collecter, filtrer et stocker l'eau de pluie pour l'utiliser à des fins non potables comme l'arrosage, le lavage des sols ou l'alimentation des toilettes.<br/><br/>Facile à mettre en place avec l'aide d'un professionnel, la récupération d'eau de pluie vous permet de réaliser des économies sur votre facture d'eau tout en contribuant à la préservation des ressources en eau.",
+  },
+  {
+    title:
+      "La déclaration OPERAT : une obligation pour les bâtiments tertiaires",
+    services:
+      "La déclaration OPERAT est une plateforme en ligne obligatoire pour tous les propriétaires ou locataires de bâtiments tertiaires de plus de 1 000 m². Elle permet de centraliser les données sur la performance énergétique de ces bâtiments et de suivre l'efficacité des politiques de rénovation énergétique.<br/><br/>Les informations déclarées concernent les caractéristiques du bâtiment, ses consommations énergétiques, les travaux de rénovation réalisés et les certifications environnementales obtenues. La déclaration doit être effectuée chaque année avant le 30 septembre.<br/><br/>L'objectif de la déclaration OPERAT est d'améliorer la connaissance du parc tertiaire français, d'inciter les acteurs du tertiaire à engager des travaux d'amélioration de la performance énergétique et de lutter contre le réchauffement climatique. En cas de non-déclaration ou de déclaration erronée, des sanctions administratives peuvent être appliquées.",
+  },
+  {
+    title: "Décret Tertiaire ! ",
+    services: `Le Décret Tertiaire, ou "Décret Éco Énergie Tertiaire", impose aux propriétaires et locataires de bâtiments tertiaires de plus de 1000m² en France de réduire leur consommation énergétique de 40% d'ici 2030, 60% d'ici 2040, et atteindre la neutralité carbone d'ici 2050, par rapport à une année de référence (2010 ou 2020). <br/><br/>Il concerne tous les bâtiments à usage tertiaire (bureaux, commerces, hôtels, administrations) et propose des solutions telles que la rénovation énergétique, l'optimisation de l'exploitation et le changement d'usage des bâtiments. Les obligations incluent la déclaration annuelle de consommation sur la plateforme OPERAT, avec des sanctions administratives en cas de non-respect. Des aides financières sont disponibles pour soutenir les entreprises dans leurs démarches.`,
+  },
+];
 ---
 
 <!doctype html>
@@ -35,10 +65,37 @@ const data: imageData[] = [
       <Entete> Services </Entete>
 
       <ServicesElement
-        data={data}
         client:load
-        titre={"En quoi consiste un devis ?"}
-        description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum interdum eu eros malesuada pharetra. Maecenas vel lacinia ligula. Aliquam mi eros, lacinia vitae enim nec, posuere maximus magna. Curabitur fringilla massa sit amet nulla luctus, eu iaculis dolor consequat. Nulla interdum eros eget elit semper volutpat in quis lorem. Sed ac erat sed erat suscipit malesuada. Praesent finibus purus sed euismod malesuada. Etiam tincidunt, est eget fermentum accumsan, est nisl scelerisque risus, commodo ornare ipsum sapien eu magna. Suspendisse non nulla accumsan, hendrerit justo ac, consequat mi. Nulla facilisi. Donec sed placerat nisl, ac accumsan ante. Ut efficitur leo vel enim viverra ultrices. Sed metus ante, finibus id suscipit non, cursus eget sapien. Nunc vestibulum nisl sed magna posuere, et commodo arcu sagittis. Nulla facilisi.'
+        titre={services[0].title}
+        description={services[0].services}
+        image='/service_1.png'
+      />
+
+      <ServicesElement
+        client:load
+        titre={services[1].title}
+        description={services[1].services}
+        image='/service_2.png'
+      />
+
+      <ServicesElement
+        client:load
+        titre={services[2].title}
+        description={services[2].services}
+        image='/service_3.png'
+      />
+
+      <ServicesElement
+        client:load
+        titre={services[3].title}
+        description={services[3].services}
+        image='/service_4.png'
+      />
+      <ServicesElement
+        client:load
+        titre={services[4].title}
+        description={services[4].services}
+        image='/service_5.png'
       />
       <AskDevis />
       <Actu />

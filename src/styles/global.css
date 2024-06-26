@@ -125,3 +125,35 @@ body {
 	}
 	
 }
+
+
+.inbox {
+	@apply border-t ;
+	.inbox-right-side {
+		width: 400px;
+		@apply border-r
+	}
+
+	.inbox-right-side {
+		overflow-y: auto;
+		overflow-x: hidden 
+	}
+
+	.inbox-element {
+
+		@apply py-3 w-full text-left ;
+
+
+		.periode {
+			@apply text-base;
+		}
+	}
+
+	.inbox-element + .inbox-element {
+		@apply border-t ;
+	}
+}
+
+.service-item {
+	@apply mb-20 ;
+}

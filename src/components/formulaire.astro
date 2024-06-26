@@ -2,14 +2,14 @@
 import Champ from "./Champ.astro";
 ---
 
-<div class='form px-6 lg:px-[50px]'>
-  <form action='' class='w-full p-[20px] lg:p-[50px] blue-light'>
+<div class='form px-6 lg:px-[50px] relative'>
+  <form action='' class='w-full p-[20px] lg:p-[50px] blue-light relative'>
     <div class=''>
       <Champ
         type='text'
         titre='Nom et Prenom *'
         placeholder='Nom complet'
-        champ='name'
+        champ='nom'
         required
       />
       <Champ
@@ -58,16 +58,74 @@ import Champ from "./Champ.astro";
       </div>
     </div>
   </form>
+  <div
+    class='absolute flex top-0 left-0 w-full h-full bg-[#fff1] z-[5] items-center justify-center flou'
+    style='backdrop-filter: blur(10px);'>
+    <div class='font-bold'>Message envoyé avec Succes</div>
+  </div>
+
+  <style>
+    .form {
+      width: 1080px;
+      margin: 0 auto 90px;
+
+      @apply w-full lg:w-[1080px];
+    }
+    .blue-light {
+      background-color: var(--blue-light);
+    }
+  </style>
+
+  <script>
+    const formulaire = document.querySelector(".form") as HTMLFormElement;
+    const flou = document.querySelector(".flou") as HTMLDivElement;
+
+    flou.remove();
+    interface FormulaireValue extends EventTarget {
+      nom: HTMLInputElement;
+      telephone: HTMLInputElement;
+      entreprise: HTMLInputElement;
+      pays: HTMLInputElement;
+      ville: HTMLInputElement;
+      message: HTMLTextAreaElement;
+    }
+
+    formulaire.addEventListener("submit", async (e) => {
+      e.preventDefault();
+
+      const hostname = location.host;
+      const protocol = location.protocol;
+
+      const { nom, telephone, entreprise, pays, ville, message } =
+        e.target as FormulaireValue;
+
+      const obj = {
+        nom: nom.value,
+        telephone: telephone.value,
+        entreprise: entreprise.value,
+        pays: pays.value,
+        ville: ville.value,
+        message: message.value,
+      };
+
+      const bodyContent = new FormData();
+
+      for (let el in obj) {
+        //@ts-ignore
+        const value = obj[`${el}`];
+
+        bodyContent.append(el, value);
+      }
+
+      const res = await fetch(`${protocol}/message.json`, {
+        method: "POST",
+        headers: {
+          Accept: "*/*",
+        },
+        body: bodyContent,
+      });
+
+      if (res.ok) formulaire.appendChild(flou);
+    });
+  </script>
 </div>
-
-<style>
-  .form {
-    width: 1080px;
-    margin: 0 auto 90px;
-
-    @apply w-full lg:w-[1080px];
-  }
-  .blue-light {
-    background-color: var(--blue-light);
-  }
-</style>

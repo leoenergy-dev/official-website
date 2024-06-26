@@ -10,6 +10,50 @@ import Banniere from "../components/Banniere.astro";
 import Story from "../components/Story.astro";
 import BaseHead from "../components/BaseHead.astro";
 import Script from "../components/Script.astro";
+
+interface StoryProp {
+  title: string;
+  description: string;
+}
+
+const story: StoryProp[] = [
+  {
+    title:
+      "Nous nous engageons à Construire un monde plus vert, une facture à la fois",
+    description: `
+      Léo Energy est un bureau d’étude spécialisé en efficacité énergétique des bâtiments. 
+      <br /><br />
+      <strong>Notre mission :</strong> Réduire considérablement le coût des factures énergétiques des entreprises et des particuliers, tout en garantissant un confort thermique optimal, le tout en favorisant un mode de vie plus vert. 
+      <br/><br/>
+      <strong>Comment ? :</strong> En s’appuyant sur des systèmes optimisés et des matériaux respectueux de l’environnement, nous concevons des solutions sur mesure pour chaque projet.
+      <br/><br />
+      <strong>Nos valeurs</strong> 
+      <li><strong>L’innovation continue :</strong>  Nous investissons en permanence dans les technologies de pointe pour proposer des solutions d’avenir.</li>
+      <li><strong>La durabilité :</strong> Notre priorité est de créer un impact positif sur l’environnement. </li> 
+      <li><strong>L’engagement Client :</strong> Nous accompagnons nos clients à chaque étape, de l’audit énergétique à la mise en œuvre des solutions.</li> 
+      <li><strong>Eco-responsable :</strong> énergétiques réduisent l’empreinte carbone et favorisent une consommation d’énergie responsable.</li>
+
+    `,
+  },
+  {
+    title: "Nos spécialités ",
+    description: `
+      
+      <li><strong>Audit énergétique réglementaire :</strong> Pour les maisons individuelles et les copropriétés.</li>  
+      <li><strong>Audit tertiaire :</strong> Adaptés aux bâtiments bâtis sur plus de 1 000 mètres carrés avec logement et commerces.</li> 
+      <li><strong>Déclaration OPERAT :</strong> Nous vous accompagnons dans la déclaration de votre sites dans le compte de l’ademe.</li>
+      <li><strong>Suivi du décret tertiaire :</strong> Nous veillons à ce que la consommation énergétique soit inférieur à à un seuil fixé.</li>
+      <li><strong>Économies d’eau :</strong> Installation des systèmes hydroéconomes et récupération d’eau à usage à usage sanitaire.</li>
+      
+      
+      Léo Energy, c’est l’engagement d’un avenir plus vert et plus économique. <br><br>
+      <strong>Notre vision </strong> <br/>
+      Leo Energy est une jeune entreprise et nous projetons dans un avenir très proche de devenir un acteur majeur dans le processus de transition énergétique en Europe et dans le monde, en proposant des solutions toujours splus  innovantes, pratiques et respectueuses de l’environnement. <br><br>
+      N'hésitez pas à nous  contacter pour découvrir comment nous pouvons vous aider à atteindre vos objectifs énergétiques.
+
+    `,
+  },
+];
 ---
 
 <!doctype html>
@@ -40,14 +84,14 @@ import Script from "../components/Script.astro";
         </div>
         <Story
           image='/image_1.png'
-          titre='un groupe'
-          description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum interdum eu eros malesuada pharetra. Maecenas vel lacinia ligula. Aliquam mi eros, lacinia vitae enim nec, posuere maximus magna. Curabitur fringilla massa sit amet nulla luctus, eu iaculis dolor consequat. Nulla interdum eros eget elit semper volutpat in quis lorem. Sed ac erat sed erat suscipit malesuada. Praesent finibus purus sed euismod malesuada. Etiam tincidunt, est eget fermentum accumsan, est nisl scelerisque risus, commodo ornare ipsum sapien eu magna. Suspendisse non nulla accumsan, hendrerit justo ac, consequat mi. Nulla facilisi. Donec sed placerat nisl, ac accumsan ante. Ut efficitur leo vel enim viverra ultrices. Sed metus ante, finibus id suscipit non, cursus eget sapien. Nunc vestibulum nisl sed magna posuere, et commodo arcu sagittis. Nulla facilisi.'
+          titre={story[0].title}
+          description={story[0].description}
         />
         <Story
           image='/image_2.png'
-          titre='Une mission'
+          titre={story[1].title}
           rtl
-          description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum interdum eu eros malesuada pharetra. Maecenas vel lacinia ligula. Aliquam mi eros, lacinia vitae enim nec, posuere maximus magna. Curabitur fringilla massa sit amet nulla luctus, eu iaculis dolor consequat. Nulla interdum eros eget elit semper volutpat in quis lorem. Sed ac erat sed erat suscipit malesuada. Praesent finibus purus sed euismod malesuada. Etiam tincidunt, est eget fermentum accumsan, est nisl scelerisque risus, commodo ornare ipsum sapien eu magna. Suspendisse non nulla accumsan, hendrerit justo ac, consequat mi. Nulla facilisi. Donec sed placerat nisl, ac accumsan ante. Ut efficitur leo vel enim viverra ultrices. Sed metus ante, finibus id suscipit non, cursus eget sapien. Nunc vestibulum nisl sed magna posuere, et commodo arcu sagittis. Nulla facilisi.'
+          description={story[1].description}
         />
       </div>
       <AskDevis />

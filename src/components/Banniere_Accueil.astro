@@ -57,3 +57,48 @@
     </div>
   </div>
 </div>
+
+<script
+  is:inline
+  src='https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js'></script>
+<script>
+  const banniere = document.querySelector(".banniere") as HTMLDivElement;
+
+  const width = banniere.offsetWidth;
+
+  let change = 0;
+  setInterval(() => {
+    if (change === 0) {
+      // @ts-ignore
+      anime({
+        targets: ".diapo_1",
+        translateX: [-width, 0],
+      });
+      setTimeout(() => {
+        // @ts-ignore
+        anime({
+          targets: ".diapo_1",
+          translateX: width,
+          delay: 500,
+        });
+      }, 4500);
+
+      change = 1;
+    } else {
+      // @ts-ignore
+      anime({
+        targets: ".diapo_2",
+        translateX: [-width, 0],
+      });
+      setTimeout(() => {
+        // @ts-ignore
+        anime({
+          targets: ".diapo_2",
+          translateX: [width],
+          delay: 500,
+        });
+      }, 4500);
+      change = 0;
+    }
+  }, 5000);
+</script>
