@@ -1,4 +1,6 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import Markdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface FaqItems {
     intitule?: string;
@@ -9,13 +11,13 @@ export default function FaqItems({
     intitule, descript
 }: FaqItems) {
     const [active, setActive] = useState<boolean>(false)
+
+
     return (
         <div className="mb-6 px-4 lg:px-[50px] py-4 lg:py-7  bg-[#F6FBFF]">
             <div className='flex items-center justify-between'>
                 <div className={`font-semibold w-[80%] transition-all ease-in-out duration-200 ${active ? 'text-lg lg:text-[28px] mb-6' : ''}`}>
                     {intitule}
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi repellat
-                    mollitia,
                 </div>
                 <div className="flex items-center">
                     <button
@@ -36,14 +38,8 @@ export default function FaqItems({
                 </div>
             </div>
             <div>
-                <div className={`overflow-hidden ${active ? 'h-auto' : 'h-0'}`}>{descript}
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi repellat
-                    mollitia, debitis facilis eos quibusdam. Similique animi eligendi ipsum nam
-                    amet facere autem? Iure debitis similique dolorem!
-                    <br />
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo delectus obcaecati
-                    libero eveniet dolorum quos soluta, rem dignissimos quaerat praesentium ad, tempora
-                    nemo asperiores est quisquam assumenda minus laboriosam unde.
+                <div className={`overflow-hidden ${active ? 'h-auto' : 'h-0'}`}>
+                    <Markdown remarkPlugins={[remarkGfm]} >{descript}</Markdown>
                 </div>
             </div>
         </div>

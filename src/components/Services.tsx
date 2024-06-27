@@ -72,10 +72,10 @@ export default function ServicesElement({ children, data, titre, description, im
     return (
         <div className="service-item">
             <div className="md:flex gap-[30px] items-start px-5 lg:px-[50px]">
-                <div className="w-[120px] lg:w-[277px] aspect-square border mb-5 lg:mb-0"
+                <div className="w-full lg:w-[277px] aspect-[16/9] lg:aspect-square border mb-5 lg:mb-0 bg-no-repeat bg-cover bg-center"
                     data-aos='fade-up'
-                    data-aos-duration='1000'>
-                    <img src={image} alt="logo_leo" />
+                    data-aos-duration='1000' style={{ backgroundImage: `url(${image})` }}>
+                    {/* <img src={image} alt="logo_leo" height={'100%'} width={'100%'} className="object-cover" /> */}
                 </div>
                 <div className="flex-1"
                     data-aos='fade-down'

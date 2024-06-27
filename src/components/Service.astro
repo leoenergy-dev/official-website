@@ -1,61 +1,40 @@
 ---
 interface Props {
-  separation?: boolean;
-  icon: string;
+  image: string;
   title: string;
+  href: string;
   yellow?: boolean;
-  description: string;
-  leo?: boolean;
   delay?: number;
 }
-const { separation, icon, title, yellow, description, leo, delay } =
-  Astro.props as Props;
+const {
+  image,
+  title,
+  yellow,
+  delay,
+  href = "/services",
+} = Astro.props as Props;
 ---
 
 <div
-  class=`service ${yellow ? 'bg-yellow' : 'bg-bleu-10'}`
+  class=`service bg-cover bg-no-repeat bg-center ${yellow ? 'bg-yellow' : 'bg-bleu-10'}`
+  style=`background-image: url(${image});`
   data-aos='fade-down'
   data-aos-delay=`${delay}`
   data-aos-duration='1000'>
-  {separation && <div class='separation' />}
-  <div class='relative overflow-hidden p-[50px]'>
-    <div><img src={icon} alt='' /></div>
-    <div class='text-3xl font-bold mb-8'>{title}</div>
-    <div>{description}</div>
-    {
-      leo && (
-        <div class='absolute bottom-[-70%] right-[40px]'>
-          <img
-            src='/logo_leo.png'
-            alt=''
-            width='150%'
-            style='max-width: none; opacity: .2;'
-          />
-        </div>
-      )
-    }
-  </div>
+  <a href={href} class='relative overflow-hidden p-5 lg:p-[40px] bg-[#0005]'>
+    <div
+      class='flex text-base lg:text-2xl font-bold mb-8 items-end justify-end text-left w-full h-full text-white'>
+      {title}
+    </div>
+  </a>
 </div>
 
 <style>
   .service {
-    @apply h-auto lg:h-[488px] flex-1 flex relative;
+    @apply h-auto lg:h-auto aspect-square flex-1 flex relative;
   }
 
   .bg-bleu-10 {
     background-color: #f6fbff;
-  }
-
-  .separation {
-    width: 6px;
-    height: 60%;
-    background-color: var(--principal-blue);
-    position: absolute;
-    left: -4px;
-    top: 50%;
-    transform: translateY(-50%);
-    border-radius: 50px;
-
-    @apply hidden lg:block;
   }
 </style>
