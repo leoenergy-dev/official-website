@@ -1,54 +1,34 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
-import Container from "../components/Container.astro";
 import AskDevis from "../components/AskDevis.astro";
-import BeforeFoot from "../components/BeforeFoot.astro";
 import Entete from "../components/entete.astro";
-import BaseHead from "../components/BaseHead.astro";
-
 import ActuItem from "../components/ActuItem";
 import { getCollection } from "astro:content";
-import Script from "../components/Script.astro";
+import Base from "../layouts/Base.astro";
+import Container from "../components/Container.astro";
 
 const posts = (await getCollection("blog"))
   .sort((a, b) => a.data.pubDate.valueOf() - b.data.pubDate.valueOf())
   .reverse();
 ---
 
-<!doctype html>
-<html lang='en'>
-  <head>
-    <BaseHead />
-    <style>
-      .banniere {
-        @apply mb-28 mt-6;
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <Container>
-      <Entete> Actualités </Entete>
+<Base>
+  <Container>
+    <Entete> Actualités </Entete>
 
-      <div>
-        {
-          posts.map(async (post, key) => (
-            <ActuItem
-              titre={post.data.title}
-              date={post.data.pubDate}
-              descript={post.data.description}
-              post={post.body}
-              delay={100 * (key * 2)}
-              client:load
-            />
-          ))
-        }
-      </div>
-      <AskDevis />
-    </Container>
-    <BeforeFoot />
-    <Footer />
-    <Script />
-  </body>
-</html>
+    <div>
+      {
+        posts.map(async (post, key) => (
+          <ActuItem
+            titre={post.data.title}
+            date={post.data.pubDate}
+            descript={post.data.description}
+            post={post.body}
+            delay={100 * (key * 2)}
+            client:load
+          />
+        ))
+      }
+    </div>
+    <AskDevis />
+  </Container>
+</Base>

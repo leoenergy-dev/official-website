@@ -1,16 +1,12 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import Container from "../components/Container.astro";
 import AskDevis from "../components/AskDevis.astro";
 import Actu from "../components/Actu.astro";
-import BeforeFoot from "../components/BeforeFoot.astro";
 import Entete from "../components/entete.astro";
 import ServicesElement from "../components/Services";
-import BaseHead from "../components/BaseHead.astro";
+import Base from "../layouts/Base.astro";
 
 import { type imageData } from "../components/Services";
-import Script from "../components/Script.astro";
 const data: imageData[] = [
   { image: "/image_1.png", titre: "image No 1" },
   { image: "/image_2.png", titre: "image No 2" },
@@ -95,35 +91,25 @@ subventions disponibles`,
 ];
 ---
 
-<!doctype html>
-<html lang='en'>
-  <head>
-    <BaseHead />
-    <style>
-      body {
-        overflow-x: hidden;
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <Container>
-      <Entete> Services </Entete>
-      {
-        services.map((el) => (
-          <ServicesElement
-            client:load
-            titre={el.title}
-            description={el.services}
-            image={el.image}
-          />
-        ))
-      }
-      <AskDevis />
-      <Actu />
-    </Container>
-    <BeforeFoot />
-    <Footer />
-    <Script />
-  </body>
-</html>
+<Base>
+  <style>
+    body {
+      overflow-x: hidden;
+    }
+  </style>
+  <Container>
+    <Entete> Services </Entete>
+    {
+      services.map((el) => (
+        <ServicesElement
+          client:load
+          titre={el.title}
+          description={el.services}
+          image={el.image}
+        />
+      ))
+    }
+    <AskDevis />
+    <Actu />
+  </Container>
+</Base>

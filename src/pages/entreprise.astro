@@ -1,15 +1,11 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import Container from "../components/Container.astro";
 import AskDevis from "../components/AskDevis.astro";
 import Actu from "../components/Actu.astro";
-import BeforeFoot from "../components/BeforeFoot.astro";
 import Entete from "../components/entete.astro";
 import Banniere from "../components/Banniere.astro";
 import Story from "../components/Story.astro";
-import BaseHead from "../components/BaseHead.astro";
-import Script from "../components/Script.astro";
+import Base from "../layouts/Base.astro";
 
 interface StoryProp {
   title: string;
@@ -50,49 +46,33 @@ qualité, l'innovation et le service client, garantissant des résultats optimau
 ];
 ---
 
-<!doctype html>
-<html lang='en'>
-  <head>
-    <BaseHead />
-    <style>
-      .banniere {
-        @apply mb-28 mt-6;
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <Container>
-      <Entete titre="l'entreprise">
-        Un service porté par des <span
-          class='principal-yellow inline-block'
-          data-aos='fade-up'
-          data-aos-duration='1000'>passionés</span
-        >
-      </Entete>
-      <Banniere image='/banniere.png' text />
-      <div class='mb-[200px]'>
-        <div
-          class='text-2xl lg:text-[40px] text-center font-bold uppercase mb-9'>
-          Qui sommes nous
-        </div>
-        <Story
-          image='/image_1.png'
-          titre={story[0].title}
-          description={story[0].description}
-        />
-        <Story
-          image='/service_1.jpeg'
-          titre={story[1].title}
-          rtl
-          description={story[1].description}
-        />
+<Base>
+  <Container>
+    <Entete titre="l'entreprise">
+      Un service porté par des <span
+        class='principal-yellow inline-block'
+        data-aos='fade-up'
+        data-aos-duration='1000'>passionés</span
+      >
+    </Entete>
+    <Banniere image='/banniere.png' text />
+    <div class='mb-[200px]'>
+      <div class='text-2xl lg:text-[40px] text-center font-bold uppercase mb-9'>
+        Qui sommes nous
       </div>
-      <AskDevis />
-      <Actu />
-    </Container>
-    <BeforeFoot />
-    <Footer />
-    <Script />
-  </body>
-</html>
+      <Story
+        image='/image_1.png'
+        titre={story[0].title}
+        description={story[0].description}
+      />
+      <Story
+        image='/service_1.jpeg'
+        titre={story[1].title}
+        rtl
+        description={story[1].description}
+      />
+    </div>
+    <AskDevis />
+    <Actu />
+  </Container>
+</Base>

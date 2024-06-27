@@ -1,46 +1,25 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import Container from "../components/Container.astro";
-import AskDevis from "../components/AskDevis.astro";
 import Actu from "../components/Actu.astro";
-import BeforeFoot from "../components/BeforeFoot.astro";
 import Entete from "../components/entete.astro";
 import Formulaire from "../components/formulaire.astro";
 import FAQ from "../components/FAQ.astro";
-import BaseHead from "../components/BaseHead.astro";
-import Script from "../components/Script.astro";
+
+import Base from "../layouts/Base.astro";
 ---
 
-<!doctype html>
-<html lang='en'>
-  <head>
-    <BaseHead />
-    <style>
-      .banniere {
-        @apply mb-28 mt-6;
-      }
-    </style>
-  </head>
-  <body>
-    <Header />
-    <Container>
-      <Entete> Contact </Entete>
-
-      <div class='mb-[200px]'>
-        <div
-          class='text-2xl lg:text-[40px] text-center font-bold uppercase mb-9'>
-          Que desirez vous ?
-        </div>
-        <Formulaire />
-        <div class='text-[40px] text-center font-bold uppercase mb-9'>FAQ</div>
-        <FAQ />
+<Base>
+  <Container>
+    <Entete> Contact </Entete>
+    <div class='mb-[200px]'>
+      <div class='text-2xl lg:text-[40px] text-center font-bold uppercase mb-9'>
+        Que desirez vous ?
       </div>
-      <!-- <AskDevis /> -->
-      <Actu />
-    </Container>
-    <BeforeFoot />
-    <Footer />
-    <Script />
-  </body>
-</html>
+      <Formulaire />
+      <div class='text-[40px] text-center font-bold uppercase mb-9'>FAQ</div>
+      <FAQ />
+    </div>
+    <!-- <AskDevis /> -->
+    <Actu />
+  </Container>
+</Base>

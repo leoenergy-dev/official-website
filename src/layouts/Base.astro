@@ -1,0 +1,26 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import BeforeFoot from "../components/BeforeFoot.astro";
+import Footer from "../components/Footer.astro";
+import Script from "../components/Script.astro";
+---
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <BaseHead />
+    <style>
+      .banniere {
+        @apply mb-28 mt-6;
+      }
+    </style>
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <BeforeFoot />
+    <Footer />
+    <Script />
+  </body>
+</html>

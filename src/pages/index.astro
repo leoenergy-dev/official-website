@@ -1,95 +1,81 @@
 ---
-import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import Container from "../components/Container.astro";
 import Service from "../components/Service.astro";
 import AskDevis from "../components/AskDevis.astro";
 import Actu from "../components/Actu.astro";
-import BeforeFoot from "../components/BeforeFoot.astro";
-import BaseHead from "../components/BaseHead.astro";
 
 import BanniereAccueil from "../components/Banniere_Accueil.astro";
-import Script from "../components/Script.astro";
+import Base from "../layouts/Base.astro";
 ---
 
-<!doctype html>
-<html lang='en'>
-  <head>
-    <BaseHead />
-  </head>
-  <body>
-    <Header />
-    <Container>
-      <BanniereAccueil />
-      <div class='pt-1'>
-        <div class='relative bg-blue p-[50px] mt-24 lg:flex gap-[50px]'>
-          <div
-            class='w-[100%] mb-6 lg:mb-0 lg:w-[368px] relative'
+<Base>
+  <Container>
+    <BanniereAccueil />
+    <div class='pt-1'>
+      <div class='relative bg-blue p-[50px] mt-24 lg:flex gap-[50px]'>
+        <div
+          class='w-[100%] mb-6 lg:mb-0 lg:w-[368px] relative'
+          data-aos='fade-up'
+          data-aos-duration='1000'>
+          <img
+            src='/LEO-ENERGY.JPG'
+            alt=''
+            width='100%'
+            class='h-[350px] lg:h-[427px] object-cover lg:absolute bottom-0'
+          />
+        </div>
+        <div class='flex-1'>
+          <div class='text-white'>
+            <strong>Leo Energy</strong>, fondée par <strong
+              >Lionel MFEGUE</strong
+            > le 4 juin 2024 à Vienne, est un Bureau d’études spécialisé dans les
+            audits énergétiques et les conseils en efficacité énergétique. Nous sommes
+            engagés à aider nos clients à optimiser leur consommation énergétique
+            et à se conformer aux normes réglementaires en vigueur. Notre expertise
+            couvre un large éventail de services, allant des audits réglementaires
+            basés sur le Diagnostic de Performance Énergétique (DPE) pour les maisons
+            individuelles et les bâtiments tertiaires, à l’accompagnement dans la
+            mise en œuvre des recommandations issues de ces audits.
+          </div>
+          <a
             data-aos='fade-up'
-            data-aos-duration='1000'>
-            <img
-              src='/LEO-ENERGY.JPG'
-              alt=''
-              width='100%'
-              class='h-[350px] lg:h-[427px] object-cover lg:absolute bottom-0'
-            />
-          </div>
-          <div class='flex-1'>
-            <div class='text-white'>
-              <strong>Leo Energy</strong>, fondée par <strong
-                >Lionel MFEGUE</strong
-              > le 4 juin 2024 à Vienne, est un Bureau d’études spécialisé dans les
-              audits énergétiques et les conseils en efficacité énergétique. Nous
-              sommes engagés à aider nos clients à optimiser leur consommation énergétique
-              et à se conformer aux normes réglementaires en vigueur. Notre expertise
-              couvre un large éventail de services, allant des audits réglementaires
-              basés sur le Diagnostic de Performance Énergétique (DPE) pour les maisons
-              individuelles et les bâtiments tertiaires, à l’accompagnement dans
-              la mise en œuvre des recommandations issues de ces audits.
-            </div>
-            <a
-              data-aos='fade-up'
-              data-aos-duration='1000'
-              href='/entreprise'
-              class='inline-flex w-fit h-[56px] bg-white font-semibold justify-center items-center text-gray-800 rounded-full relative z-[2] uppercase text-base px-10 mt-5'>
-              lire la suite
-            </a>
-          </div>
+            data-aos-duration='1000'
+            href='/entreprise'
+            class='inline-flex w-fit h-[56px] bg-white font-semibold justify-center items-center text-gray-800 rounded-full relative z-[2] uppercase text-base px-10 mt-5'>
+            lire la suite
+          </a>
         </div>
       </div>
-      <section class='mt-[50px] lg:mt-[167px]'>
-        <div class='py-5'>
-          <div class='mx-auto titre text-center'>Services</div>
-        </div>
-        <div class='grid grid-cols-2 lg:flex px-4 lg:px-0 gap-4'>
-          <Service
-            image='/recup.png'
-            title='Récupération d’eau de pluie pour les sanitaires'
-            yellow
-            delay={100}
-          />
-          <Service
-            image='/conseil.png'
-            title='Inspection et conseil en consommation d’eau'
-            delay={300}
-          />
-          <Service
-            image='/audit-reg.png'
-            title='Audit énergétique réglementaires pour les maisons individuelles '
-            delay={500}
-          />
-          <Service
-            image='/tertiere.png'
-            title='Audit énergétique pour les bâtiments tertiaires'
-            delay={700}
-          />
-        </div>
-      </section>
-      <AskDevis />
-      <Actu />
-    </Container>
-    <BeforeFoot />
-    <Footer />
-    <Script />
-  </body>
-</html>
+    </div>
+    <section class='mt-[50px] lg:mt-[167px]'>
+      <div class='py-5'>
+        <div class='mx-auto titre text-center'>Services</div>
+      </div>
+      <div class='grid grid-cols-2 lg:flex px-4 lg:px-0 gap-4'>
+        <Service
+          image='/recup.png'
+          title='Récupération d’eau de pluie pour les sanitaires'
+          yellow
+          delay={100}
+        />
+        <Service
+          image='/conseil.png'
+          title='Inspection et conseil en consommation d’eau'
+          delay={300}
+        />
+        <Service
+          image='/audit-reg.png'
+          title='Audit énergétique réglementaires pour les maisons individuelles '
+          delay={500}
+        />
+        <Service
+          image='/tertiere.png'
+          title='Audit énergétique pour les bâtiments tertiaires'
+          delay={700}
+        />
+      </div>
+    </section>
+    <AskDevis />
+    <Actu />
+  </Container>
+</Base>
