@@ -117,7 +117,7 @@ import Champ from "./Champ.astro";
         bodyContent.append(el, value);
       }
 
-      const res = await fetch(`${protocol}/message.json`, {
+      const res = await fetch(`${protocol}/message`, {
         method: "POST",
         headers: {
           Accept: "*/*",
