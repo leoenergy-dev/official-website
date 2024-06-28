@@ -77,6 +77,9 @@ import Champ from "./Champ.astro";
   </style>
 
   <script>
+    import { DB } from "../firebase";
+    import { setDoc, doc } from "firebase/firestore";
+
     const formulaire = document.querySelector(".form") as HTMLFormElement;
     const flou = document.querySelector(".flou") as HTMLDivElement;
 
@@ -106,6 +109,9 @@ import Champ from "./Champ.astro";
         pays: pays.value,
         ville: ville.value,
         message: message.value,
+        alreadyRead: false,
+        readWhen: null,
+        createdAt: new Date(),
       };
 
       const bodyContent = new FormData();
@@ -117,15 +123,10 @@ import Champ from "./Champ.astro";
         bodyContent.append(el, value);
       }
 
-      const res = await fetch(`${protocol}/message`, {
-        method: "POST",
-        headers: {
-          Accept: "*/*",
-        },
-        body: bodyContent,
+      const ref = doc(DB, "/message", `message-${Date.now()}`);
+      await setDoc(ref, obj).then((e) => {
+        formulaire.appendChild(flou);
       });
-
-      if (res.ok) formulaire.appendChild(flou);
     });
   </script>
 </div>
