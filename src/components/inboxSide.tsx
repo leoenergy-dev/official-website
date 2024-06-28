@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { DB } from '../firebase'
 import { getDocs, collection, Timestamp, doc, updateDoc } from 'firebase/firestore'
-import type { messageSend } from '../pages/message.json'
+import type { messageSend } from '../pages/message'
 import moment from 'moment'
 
 export default function InboxMessage() {
@@ -46,7 +46,7 @@ export default function InboxMessage() {
                 Messages
             </div>
             <div className="inbox flex flex-1 border-t">
-                <div className="inbox-right-side">
+                <div className="inbox-right-side overflow-y-auto h-full">
                     {
                         data.length === 0
                             ? (<div className='flex items-center justify-center flex-col h-full'>
@@ -70,8 +70,8 @@ export default function InboxMessage() {
                                 Liste des messages. Cliquer sur un message pour avoir le contenu
                             </div>
                         </div>)
-                        : (<div>
-                            <div className='p-6'>
+                        : (<div className='h-full'>
+                            <div className='p-6 h-full flex flex-col'>
                                 <div className='text-2xl'>{item?.nom} - {item?.entreprise}
                                     <div className='text-base font-semibold'>Téléphone : {item?.telephone}</div>
                                 </div>
@@ -87,7 +87,7 @@ export default function InboxMessage() {
                                         <span className='font-semibold'> Date de création : </span> {`${setTime(item.createdAt as Timestamp).d < 10 ? `0${setTime(item.createdAt as Timestamp).d}` : setTime(item.createdAt as Timestamp).d}`}/{`${setTime(item.createdAt as Timestamp).mt < 10 ? `0${setTime(item.createdAt as Timestamp).mt}` : setTime(item.createdAt as Timestamp).mt}`}/{`${setTime(item.createdAt as Timestamp).yrs}`}
                                     </div>
                                 </div>
-                                <div className='pt-6 w-[100%] overflow-y-auto overflow-x-hidden'>
+                                <div className='pt-6 w-[100%] overflow-y-auto overflow-x-hidden flex-1 h-full'>
                                     {item?.message}
                                 </div>
                             </div>
