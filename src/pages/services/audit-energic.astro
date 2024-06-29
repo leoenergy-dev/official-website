@@ -1,0 +1,57 @@
+---
+import Container from "../../components/Container.astro";
+import AskDevis from "../../components/AskDevis.astro";
+import Actu from "../../components/Actu.astro";
+
+import Base from "../../layouts/Base.astro";
+---
+
+<Base>
+  <Container>
+    <section class='lg:px-[50px] mt-9'>
+      <div class='w-full aspect-video overflow-hidden'>
+        <img src='/tertiere.png' alt='' width='100%' height='100%' />
+      </div>
+      <div class='pt-[25px] px-[20px] lg:p-[50px]'>
+        <main>
+          <div
+            class='text-xl lg:text-5xl font-bold text-center lg:w-[80%] mx-auto uppercase mb-5'>
+            Audit énergétique pour les bâtiments tertiaires
+          </div>
+          <div>
+            Les audits énergétiques pour les bâtiments tertiaires doivent se
+            conformer à des réglementations strictes, notamment le décret Éco
+            Énergie Tertiaire issu de la loi Élan. Ce décret impose des
+            réductions progressives de la consommation d’énergie dans les
+            bâtiments tertiaires de 40% d’ici 2030, 50% d’ici 2040, et 60% d’ici
+            2050 par rapport à l’année de référence 2010. La réalisation de ces
+            audits permet non seulement de se conformer aux obligations légales
+            mais aussi de s'engager dans la transition énergétique en réduisant
+            les émissions de gaz à effet de serre. Les entreprises assujetties
+            doivent déclarer leurs consommations énergétiques annuelles sur la
+            plateforme OPERAT de l’ADEME et mettre en œuvre les recommandations
+            issues de l’audit pour atteindre les objectifs de performance
+            énergétique.
+            <br /><br />
+            Leo Energy réalise des audits énergétiques pour les bâtiments tertiaires
+            afin d'améliorer leur performance énergétique et de se conformer aux
+            réglementations en vigueur. Ces audits permettent d'identifier les sources
+            de gaspillage énergétique et de proposer des scénarios de travaux pour
+            réduire les consommations. Nous effectuons des calculs détaillés sur
+            l'énergie primaire et différents scénarios de rénovation pour des bâtiments
+            tels que des hôtels, des écoles, des mairies et bien d’autres. Ces audits
+            intègrent également les Certificats d'Économies d'Énergie (CEE), offrant
+            ainsi des solutions financières pour la mise en œuvre des recommandations
+            de rénovation énergétique. En outre, Léo Energy accompagne ses clients
+            dans la déclaration de leurs consommations énergétiques annuelles sur
+            la plateforme OPERAT de l’ADEME, assurant ainsi la conformité avec les
+            obligations réglementaires et facilitant l'accès aux primes et subventions
+            disponibles
+          </div>
+        </main>
+      </div>
+    </section>
+    <AskDevis />
+    <Actu />
+  </Container>
+</Base>

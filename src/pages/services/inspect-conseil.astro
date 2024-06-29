@@ -1,0 +1,37 @@
+---
+import Container from "../../components/Container.astro";
+import AskDevis from "../../components/AskDevis.astro";
+import Actu from "../../components/Actu.astro";
+
+import Base from "../../layouts/Base.astro";
+---
+
+<Base>
+  <Container>
+    <section class='lg:px-[50px] mt-9'>
+      <div class='w-full aspect-video overflow-hidden'>
+        <img src='/conseil.png' alt='' width='100%' height='100%' />
+      </div>
+      <div class='pt-[25px] px-[20px] lg:p-[50px]'>
+        <main>
+          <div
+            class='text-xl lg:text-5xl font-bold text-center lg:w-[80%] mx-auto uppercase mb-5'>
+            Inspection et conseil en consommation d’eau
+          </div>
+          <div>
+            Chez Leo Energy, nous offrons des services complets d'inspection
+            pour identifier les causes d'une consommation élevée d'eau dans vos
+            bâtiments. Nos experts proposent des solutions concrètes, telles que
+            l'installation de robinets, pommeaux de douche et mousseurs
+            économes, pour optimiser l'utilisation de l'eau et réduire vos
+            coûts. En outre, nous installons des traceurs pour surveiller et
+            détecter les fuites d'eau, assurant ainsi une gestion efficace et
+            durable de vos ressources en eau
+          </div>
+        </main>
+      </div>
+    </section>
+    <AskDevis />
+    <Actu />
+  </Container>
+</Base>

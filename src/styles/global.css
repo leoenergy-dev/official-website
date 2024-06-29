@@ -157,3 +157,16 @@ body {
 .service-item {
 	@apply mb-20 ;
 }
+
+.services-menu {
+	height: 0%;
+	opacity: 0;
+	bottom: 0;
+	transition: all ease-in-out .3s;
+}
+
+.services:hover .services-menu {
+	opacity: 1;
+	bottom: -285px;
+	height: 282px;
+}

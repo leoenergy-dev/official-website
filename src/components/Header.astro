@@ -20,7 +20,39 @@ import Botton_icon from "./Botton_icon.astro";
           <ul class='flex gap-5 font-semibold text-gray-600 pr-5 border-r-2'>
             <a href='/'><li>Accueil</li></a>
             <a href='/entreprise'><li>A Propos</li></a>
-            <a href='/services'><li>Services</li></a>
+            <a>
+              <li class='services relative'>
+                Services
+                <ul
+                  class='services-menu absolute left-[-100px] w-[350px] bg-white border text-base shadow-md overflow-hidden'>
+                  <a href='/services/recup-eau-plus'
+                    ><li
+                      class='h-fit px-6 flex items-center hover:bg-[var(--principal-blue)] hover:text-white py-2'>
+                      RÉCUPÉRATION D’EAU DE PLUIE POUR LES SANITAIRES
+                    </li></a
+                  >
+                  <a href='/services/inspect-conseil'
+                    ><li
+                      class='h-fit px-6 flex items-center hover:bg-[var(--principal-blue)] hover:text-white py-2'>
+                      INSPECTION ET CONSEIL EN CONSOMMATION D’EAU
+                    </li></a
+                  >
+                  <a href='/services/audit-reglem'
+                    ><li
+                      class='h-fit px-6 flex items-center hover:bg-[var(--principal-blue)] hover:text-white py-2'>
+                      AUDIT ÉNERGÉTIQUE RÉGLEMENTAIRES POUR LES MAISONS
+                      INDIVIDUELLES
+                    </li></a
+                  >
+                  <a href='/services/audit-energic'
+                    ><li
+                      class='h-fit px-6 flex items-center hover:bg-[var(--principal-blue)] hover:text-white py-2'>
+                      AUDIT ÉNERGÉTIQUE POUR LES BÂTIMENTS TERTIAIRES
+                    </li></a
+                  >
+                </ul>
+              </li>
+            </a>
             <a href='/actualites'><li>Actualités</li></a>
             <a href='/contact'><li>Contacts</li></a>
           </ul>
@@ -58,7 +90,7 @@ import Botton_icon from "./Botton_icon.astro";
         </div>
 
         <div class='lg:hidden'>
-          <button class='flex lg:hidden items-center h-full menu'>
+          <button class='menu aspect-square flex lg:hidden items-center h-full'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='32'
@@ -123,22 +155,53 @@ import Botton_icon from "./Botton_icon.astro";
                   A Propos de Nous
                 </div>
               </Botton_icon>
-              <Botton_icon url={"/services"} delay={300}>
-                <div class='flex items-center gap-4 py-3'>
-                  <div
-                    class='w-[42px] aspect-square rounded-full flex items-center justify-center'>
-                    <svg
-                      xmlns='http://www.w3.org/2000/svg'
-                      width='24'
-                      height='24'
-                      viewBox='0 0 24 24'
-                      ><path
-                        fill='currentColor'
-                        d='M3.161 4.469a6.5 6.5 0 0 1 8.84-.328a6.5 6.5 0 0 1 9.178 9.154l-7.765 7.79a2 2 0 0 1-2.719.102l-.11-.101l-7.764-7.791a6.5 6.5 0 0 1 .34-8.826m1.414 1.414a4.5 4.5 0 0 0-.146 6.21l.146.154L12 19.672l5.303-5.305l-3.535-3.534l-1.06 1.06a3 3 0 0 1-4.244-4.242l2.102-2.103a4.501 4.501 0 0 0-5.837.189zm8.486 2.828a1 1 0 0 1 1.414 0l4.242 4.242l.708-.706a4.5 4.5 0 0 0-6.211-6.51l-.153.146l-3.182 3.182a1 1 0 0 0-.078 1.327l.078.087a1 1 0 0 0 1.327.078l.087-.078z'
-                      ></path></svg
-                    >
+              <Botton_icon url={"#"} delay={300}>
+                <div>
+                  <div class='flex items-center gap-4 py-3'>
+                    <div
+                      class='w-[42px] aspect-square rounded-full flex items-center justify-center'>
+                      <svg
+                        xmlns='http://www.w3.org/2000/svg'
+                        width='24'
+                        height='24'
+                        viewBox='0 0 24 24'
+                        ><path
+                          fill='currentColor'
+                          d='M3.161 4.469a6.5 6.5 0 0 1 8.84-.328a6.5 6.5 0 0 1 9.178 9.154l-7.765 7.79a2 2 0 0 1-2.719.102l-.11-.101l-7.764-7.791a6.5 6.5 0 0 1 .34-8.826m1.414 1.414a4.5 4.5 0 0 0-.146 6.21l.146.154L12 19.672l5.303-5.305l-3.535-3.534l-1.06 1.06a3 3 0 0 1-4.244-4.242l2.102-2.103a4.501 4.501 0 0 0-5.837.189zm8.486 2.828a1 1 0 0 1 1.414 0l4.242 4.242l.708-.706a4.5 4.5 0 0 0-6.211-6.51l-.153.146l-3.182 3.182a1 1 0 0 0-.078 1.327l.078.087a1 1 0 0 0 1.327.078l.087-.078z'
+                        ></path></svg
+                      >
+                    </div>
+                    Services
                   </div>
-                  Services
+                  <div>
+                    <ul class='pl-[20px]'>
+                      <a href='/services/recup-eau-plus'
+                        ><li
+                          class='h-fit px-6 flex items-center text-base py-3'>
+                          RÉCUPÉRATION D’EAU DE PLUIE POUR LES SANITAIRES
+                        </li></a
+                      >
+                      <a href='/services/inspect-conseil'
+                        ><li
+                          class='h-fit px-6 flex items-center text-base py-3'>
+                          INSPECTION ET CONSEIL EN CONSOMMATION D’EAU
+                        </li></a
+                      >
+                      <a href='/services/audit-reglem'
+                        ><li
+                          class='h-fit px-6 flex items-center text-base py-3'>
+                          AUDIT ÉNERGÉTIQUE RÉGLEMENTAIRES POUR LES MAISONS
+                          INDIVIDUELLES
+                        </li></a
+                      >
+                      <a href='/services/audit-energic'
+                        ><li
+                          class='h-fit px-6 flex items-center text-base py-3'>
+                          AUDIT ÉNERGÉTIQUE POUR LES BÂTIMENTS TERTIAIRES
+                        </li></a
+                      >
+                    </ul>
+                  </div>
                 </div>
               </Botton_icon>
               <Botton_icon url={"/actualites"} delay={400}>
@@ -231,13 +294,14 @@ import Botton_icon from "./Botton_icon.astro";
 </header>
 
 <script>
-  const menubtn = document.querySelector(".menu");
+  const menubtn = document.querySelector(".menu") as HTMLButtonElement;
   const menuContent = document.querySelector(".menu-content") as HTMLDivElement;
   const header = document.querySelector(".header");
   const close = document.querySelector(".close");
 
-  menuContent?.remove();
-  menubtn?.addEventListener("click", () => {
+  menuContent.remove();
+  header?.addEventListener("click", () => {
+    console.log("je fonctionne");
     header?.appendChild(menuContent);
     menuContent?.classList.remove("hidden");
     menuContent?.classList.add("fixed");

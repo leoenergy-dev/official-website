@@ -1,0 +1,36 @@
+---
+import Container from "../../components/Container.astro";
+import AskDevis from "../../components/AskDevis.astro";
+import Actu from "../../components/Actu.astro";
+
+import Base from "../../layouts/Base.astro";
+---
+
+<Base>
+  <Container>
+    <section class='lg:px-[50px] mt-9'>
+      <div class='w-full aspect-video overflow-hidden'>
+        <img src='/recup.png' alt='' width='100%' height='100%' />
+      </div>
+      <div class='pt-[25px] px-[20px] lg:p-[50px]'>
+        <main>
+          <div
+            class='text-xl lg:text-5xl font-bold text-center lg:w-[80%] mx-auto uppercase mb-5'>
+            Récupération d’eau de pluie pour les sanitaires
+          </div>
+          <div>
+            Chez Leo Energy, nous proposons des solutions innovantes pour la
+            récupération et l'utilisation de l'eau de pluie dans les sanitaires.
+            Nos systèmes de collecte et de réutilisation de l'eau permettent de
+            réduire la consommation d'eau potable et de contribuer à la
+            durabilité environnementale de votre bâtiment. Notre équipe de
+            professionnels est là pour vous aider à comprendre et à optimiser
+            l'utilisation de ces systèmes.
+          </div>
+        </main>
+      </div>
+    </section>
+    <AskDevis />
+    <Actu />
+  </Container>
+</Base>

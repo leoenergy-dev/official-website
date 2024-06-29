@@ -1,0 +1,58 @@
+---
+import Container from "../../components/Container.astro";
+import AskDevis from "../../components/AskDevis.astro";
+import Actu from "../../components/Actu.astro";
+
+import Base from "../../layouts/Base.astro";
+---
+
+<Base>
+  <Container>
+    <section class='lg:px-[50px] mt-9'>
+      <div class='w-full aspect-video overflow-hidden'>
+        <img src='/audit-reg.png' alt='' width='100%' height='100%' />
+      </div>
+      <div class='pt-[25px] px-[20px] lg:p-[50px]'>
+        <main>
+          <div
+            class='text-xl lg:text-5xl font-bold text-center lg:w-[80%] mx-auto uppercase mb-5'>
+            Audit énergétique réglementaires pour les maisons individuelles
+          </div>
+          <div>
+            Un audit réglementaire est une évaluation systématique et méthodique
+            des performances énergétiques d'un bâtiment réalisée conformément
+            aux normes et réglementations en vigueur. Cet audit, souvent basé
+            sur le Diagnostic de Performance Énergétique (DPE), vise à
+            identifier les sources de gaspillage énergétique, à proposer des
+            solutions d'amélioration et à assurer la conformité aux exigences
+            légales. Pour garantir la qualité et la fiabilité des diagnostics et
+            des recommandations, cet audit doit être réalisé par un bureau
+            d'études certifié RGE (Reconnu Garant de l'Environnement). Leo
+            Energy propose des scénarios de travaux tels que l'isolation des
+            murs et des toits, le remplacement des systèmes de chauffage et de
+            ventilation, et l'installation de dispositifs économes en énergie,
+            tout en fournissant une estimation des coûts, des économies
+            potentielles, et des aides financières disponibles comme
+            MaPrimeRénov' et d'autres subventions locales et régionales.
+            <br /><br />
+            Leo Energy offre également des conseils personnalisés pour maximiser
+            les aides financières en fonction du revenu fiscal du foyer et de la
+            région, particulièrement pour les maisons individuelles. Les aides peuvent
+            varier considérablement, et il est crucial d'identifier les options les
+            plus avantageuses pour chaque client. Nos experts fournissent des informations
+            détaillées sur les aides spécifiques, telles que les subventions régionales,
+            les crédits d'impôt, et les prêts à taux zéro, afin de faciliter la mise
+            en œuvre des travaux de rénovation énergétique. Cela permet non seulement
+            de réaliser des économies d'énergie significatives, mais aussi de réduire
+            les coûts pour les clients grâce à une gestion optimisée des ressources
+            financières disponibles. Cette approche est particulièrement bénéfique
+            lors de la vente ou de la location, car elle augmente la valeur du bien
+            immobilier et assure une transparence totale pour les futurs occupants
+          </div>
+        </main>
+      </div>
+    </section>
+    <AskDevis />
+    <Actu />
+  </Container>
+</Base>
