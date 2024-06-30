@@ -36,6 +36,12 @@ body {
 	@apply text-[16px] lg:text-[20px]
 }
 
+img, video {
+    max-width: none;
+    height: revert-layer;
+}
+
+
 
 .principal-yellow {
 	color: var(--principal-yello);
