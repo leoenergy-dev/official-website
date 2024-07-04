@@ -1,5 +1,21 @@
 ---
+import BanniereTop, { type liteElement } from "../components/banniere";
 
+const data: liteElement[] = [
+  {
+    image: "/accueil_1.webp",
+    texte: "Bureau d’études thermique et énergétique",
+  },
+  {
+    image: "/accueil_2.jpg",
+    texte: "Accompagnement pour la réalisation des projets énergétiques ",
+  },
+  {
+    image: "/accueil_3.webp",
+    texte:
+      "Faites des économies d'énergie pour un confort thermique à petit prix",
+  },
+];
 ---
 
 <style>
@@ -15,25 +31,8 @@
   }
 </style>
 <div class='banniere'>
-  <div class='relative h-[622px] lg:block'>
-    <div class='relative h-full overflow-hidden'>
-      <div class='diapo_1'>
-        <img src='/accueil_1.jpg' alt='' width='100%' />
-      </div>
-      <div class='diapo_2'>
-        <img src='/accueil_2.jpg' alt='' width='100%' />
-      </div>
-      <div class='diapo_3'>
-        <img src='/accueil_3.jpeg' alt='' width='100%' />
-      </div>
-    </div>
-    <div
-      class='absolute top-0 left-0 w-full h-full bg-blue-20 lg:p-[47px] flex items-end justify-start'>
-      <div
-        class='w-[80%] text-center lg:text-left lg:w-[55%] text-4xl lg:text-5xl font-extrabold text-white mb-24 lg:mb-12 mx-auto lg:mx-0'>
-        Faites des économies d'énergie pour un confort thermique à petit prix
-      </div>
-    </div>
+  <div class='relative h-[700px] lg:block'>
+    <BanniereTop client:load data={data} />
     <div
       class='bg-yellow absolute bottom-[-234px] lg:bottom-[-154px] lg:bottom-[-64px] right-[5%] lg:right-[47px] w-[90%] lg:w-[428px]'
       data-aos='fade-down'
@@ -60,63 +59,3 @@
     </div>
   </div>
 </div>
-
-<script
-  is:inline
-  src='https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js'></script>
-<script>
-  const banniere = document.querySelector(".banniere") as HTMLDivElement;
-
-  const width = banniere.offsetWidth;
-
-  let change = 0;
-  setInterval(() => {
-    if (change === 0) {
-      // @ts-ignore
-      anime({
-        targets: ".diapo_1",
-        translateX: [-width, 0],
-      });
-      setTimeout(() => {
-        // @ts-ignore
-        anime({
-          targets: ".diapo_1",
-          translateX: width,
-          delay: 500,
-        });
-      }, 4500);
-
-      change = 1;
-    } else if (change == 2) {
-      // @ts-ignore
-      anime({
-        targets: ".diapo_3",
-        translateX: [-width, 0],
-      });
-      setTimeout(() => {
-        // @ts-ignore
-        anime({
-          targets: ".diapo_3",
-          translateX: [width],
-          delay: 500,
-        });
-      }, 4500);
-      change = 0;
-    } else {
-      // @ts-ignore
-      anime({
-        targets: ".diapo_2",
-        translateX: [-width, 0],
-      });
-      setTimeout(() => {
-        // @ts-ignore
-        anime({
-          targets: ".diapo_2",
-          translateX: [width],
-          delay: 500,
-        });
-      }, 4500);
-      change = 2;
-    }
-  }, 5000);
-</script>

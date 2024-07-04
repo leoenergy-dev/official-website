@@ -90,7 +90,7 @@ import Botton_icon from "./Botton_icon.astro";
         </div>
 
         <div class='lg:hidden'>
-          <button class='menu aspect-square flex lg:hidden items-center h-full'>
+          <button class='menu flex lg:hidden items-center h-full'>
             <svg
               xmlns='http://www.w3.org/2000/svg'
               width='32'
@@ -174,7 +174,11 @@ import Botton_icon from "./Botton_icon.astro";
                     Services
                   </div>
                   <div>
-                    <ul class='pl-[20px]'>
+                    <ul
+                      class='pl-[20px]'
+                      data-aos='fade-in'
+                      data-aos-delay=`300`
+                      data-aos-duration='1000'>
                       <a href='/services/recup-eau-plus'
                         ><li
                           class='h-fit px-6 flex items-center text-base py-3'>
@@ -285,6 +289,7 @@ import Botton_icon from "./Botton_icon.astro";
                   LinkedIn
                 </div>
               </Botton_icon>
+              <div class='h-[100px]'></div>
             </div>
           </div>
         </div>
@@ -300,8 +305,7 @@ import Botton_icon from "./Botton_icon.astro";
   const close = document.querySelector(".close");
 
   menuContent.remove();
-  header?.addEventListener("click", () => {
-    console.log("je fonctionne");
+  menubtn?.addEventListener("click", () => {
     header?.appendChild(menuContent);
     menuContent?.classList.remove("hidden");
     menuContent?.classList.add("fixed");
